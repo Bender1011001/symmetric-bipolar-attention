@@ -1,0 +1,110 @@
+{
+  "checkpoint": "sba_standalone/results/homotopy_conversion_v5/homotopy_step004000_12l_12h_768d.pt",
+  "checkpoint_step": 4000,
+  "attention": "sba",
+  "scratch_config": {
+    "vocab_size": 50257,
+    "block_size": 1024,
+    "n_layer": 12,
+    "n_head": 12,
+    "n_embd": 768,
+    "dropout": 0.0,
+    "mlp_ratio": 4
+  },
+  "generation": {
+    "max_new_tokens": 50,
+    "temperature": 0.0,
+    "top_k": 0
+  },
+  "summary": {
+    "task_count": 6,
+    "correct": 0,
+    "accuracy": 0.0
+  },
+  "results": [
+    {
+      "task_id": "linear_equation",
+      "kind": "exact_number",
+      "prompt": "Question:\nSolve for x: 2x + 5 = 17. Give only the value of x.\n\nAnswer:\n",
+      "expected": 6,
+      "function_name": "",
+      "completion": "\nTheorem (theta)\n\n\nTheoremal part of the first, which is the first, which is the first, which is the first, which is the first, which is the first, which is the first, which is",
+      "score": {
+        "correct": false,
+        "numbers_found": [],
+        "searched_text": "\nTheorem (theta)\n\n\nTheoremal part of the first, which is the first, which is the first, which is the first, which is the first, which is the first, which is the first, which is"
+      }
+    },
+    {
+      "task_id": "two_digit_addition",
+      "kind": "exact_number",
+      "prompt": "Question:\nWhat is 47 + 58? Give only the number.\n\nAnswer:\n",
+      "expected": 105,
+      "function_name": "",
+      "completion": "First, let's see:\n\n\nFirst, let's see:\n\n\nThe problem:\n\nThe number of the following the following the following the following:\nThe first fewest possible cases:\n1.\n1.\n",
+      "score": {
+        "correct": false,
+        "numbers_found": [
+          1.0,
+          1.0
+        ],
+        "searched_text": "First, let's see:\n\n\nFirst, let's see:\n\n\nThe problem:\n\nThe number of the following the following the following the following:\nThe first fewest possible cases:\n1.\n1.\n"
+      }
+    },
+    {
+      "task_id": "small_multiplication",
+      "kind": "exact_number",
+      "prompt": "Question:\nWhat is 13 * 12? Give only the number.\n\nAnswer:\n",
+      "expected": 156,
+      "function_name": "",
+      "completion": "To find out of the first, let's see if we can be sure that we can be sure that we can be sure that we can use the first, which is also known as follows this is also known as follows the first, which is also",
+      "score": {
+        "correct": false,
+        "numbers_found": [],
+        "searched_text": "To find out of the first, let's see if we can be sure that we can be sure that we can be sure that we can use the first, which is also known as follows this is also known as follows the first, which is also"
+      }
+    },
+    {
+      "task_id": "factorial_function",
+      "kind": "python_function",
+      "prompt": "Question:\nWrite a Python function named factorial that returns n!.\n\nAnswer:\n",
+      "expected": null,
+      "function_name": "factorial",
+      "completion": "<think>\n\nOkay, which is the factorialsigma(numbers with the factorialsigma(numbers with the factorialsigma(sigma(sigmasolution|end_of_of_of_of",
+      "score": {
+        "correct": false,
+        "error": "no function definition found",
+        "source_excerpt": "",
+        "test_results": []
+      }
+    },
+    {
+      "task_id": "binary_search_function",
+      "kind": "python_function",
+      "prompt": "Question:\nWrite a Python function named binary_search that returns the index of target in a sorted list, or -1 if missing.\n\nAnswer:\n",
+      "expected": null,
+      "function_name": "binary_search",
+      "completion": "\n<think>0, which is the target for each subsequent numbers, the target, which is the target, which is the target, and then the target, with the target, and then the target, which is the target, which is the",
+      "score": {
+        "correct": false,
+        "error": "no function definition found",
+        "source_excerpt": "",
+        "test_results": []
+      }
+    },
+    {
+      "task_id": "palindrome_function",
+      "kind": "python_function",
+      "prompt": "Question:\nWrite a Python function named is_palindrome that returns True if a string is a palindrome.\n\nAnswer:\n",
+      "expected": null,
+      "function_name": "is_palindrome",
+      "completion": "1. The function is a palindrome, which is a palindrome, the palindrome, the palindrome, the palindrome, the palindrome, the palindrome, the palindrome the palindrome",
+      "score": {
+        "correct": false,
+        "error": "no function definition found",
+        "source_excerpt": "",
+        "test_results": []
+      }
+    }
+  ]
+}

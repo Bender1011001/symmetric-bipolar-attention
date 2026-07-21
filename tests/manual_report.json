@@ -1,0 +1,10 @@
+{
+  "dataset_statistics": {
+    "total_records": 50000,
+    "duplicates": 0
+  },
+  "llm_judge": {
+    "evaluated_samples": 100,
+    "passed_samples": 98
+  }
+}

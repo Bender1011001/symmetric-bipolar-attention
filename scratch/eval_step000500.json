@@ -1,0 +1,114 @@
+{
+  "checkpoint": "sba_standalone/results/homotopy_conversion_v5/homotopy_step000500_12l_12h_768d.pt",
+  "checkpoint_step": 500,
+  "attention": "sba",
+  "scratch_config": {
+    "vocab_size": 50257,
+    "block_size": 1024,
+    "n_layer": 12,
+    "n_head": 12,
+    "n_embd": 768,
+    "dropout": 0.0,
+    "mlp_ratio": 4
+  },
+  "generation": {
+    "max_new_tokens": 50,
+    "temperature": 0.0,
+    "top_k": 0
+  },
+  "summary": {
+    "task_count": 6,
+    "correct": 0,
+    "accuracy": 0.0
+  },
+  "results": [
+    {
+      "task_id": "linear_equation",
+      "kind": "exact_number",
+      "prompt": "Question:\nSolve for x: 2x + 5 = 17. Give only the value of x.\n\nAnswer:\n",
+      "expected": 6,
+      "function_name": "",
+      "completion": "\nxample:\n\n\nx\nSo, which is not in the same for x + 2.\n\n\n\nx = 17:\n\nx = 17:\nx = 17:\nx = 17:\nx = 17",
+      "score": {
+        "correct": false,
+        "numbers_found": [
+          2.0,
+          17.0,
+          17.0,
+          17.0,
+          17.0,
+          17.0
+        ],
+        "searched_text": "\nxample:\n\n\nx\nSo, which is not in the same for x + 2.\n\n\n\nx = 17:\n\nx = 17:\nx = 17:\nx = 17:\nx = 17"
+      }
+    },
+    {
+      "task_id": "two_digit_addition",
+      "kind": "exact_number",
+      "prompt": "Question:\nWhat is 47 + 58? Give only the number.\n\nAnswer:\n",
+      "expected": 105,
+      "function_name": "",
+      "completion": "\n\n\n<think>\n\n\n\n\n\n<think>\n\n\n\n\n<think>\n\n\n\n```python splits on the number of the number of the number of the number of the number of the number of",
+      "score": {
+        "correct": false,
+        "numbers_found": [],
+        "searched_text": "\n\n\n<think>\n\n\n\n\n\n<think>\n\n\n\n\n<think>\n\n\n\n```python splits on the number of the number of the number of the number of the number of the number of"
+      }
+    },
+    {
+      "task_id": "small_multiplication",
+      "kind": "exact_number",
+      "prompt": "Question:\nWhat is 13 * 12? Give only the number.\n\nAnswer:\n",
+      "expected": 156,
+      "function_name": "",
+      "completion": "\n\n\n\n\n\n\n\n\n<think>\n\n\n\n\n<think>\n\n\n\n\n\n\n```python splits on both sides of the number of the number of the number of the number of the number of",
+      "score": {
+        "correct": false,
+        "numbers_found": [],
+        "searched_text": "\n\n\n\n\n\n\n\n\n<think>\n\n\n\n\n<think>\n\n\n\n\n\n\n```python splits on both sides of the number of the number of the number of the number of the number of"
+      }
+    },
+    {
+      "task_id": "factorial_function",
+      "kind": "python_function",
+      "prompt": "Question:\nWrite a Python function named factorial that returns n!.\n\nAnswer:\n",
+      "expected": null,
+      "function_name": "factorial",
+      "completion": "\n\n\n<think>\n\n\n\n\n\n<think>\n\n```mark<think>\n\n\n\n```pythoni. I need to find a function of the function of the function: For each term in this",
+      "score": {
+        "correct": false,
+        "error": "no function definition found",
+        "source_excerpt": "",
+        "test_results": []
+      }
+    },
+    {
+      "task_id": "binary_search_function",
+      "kind": "python_function",
+      "prompt": "Question:\nWrite a Python function named binary_search that returns the index of target in a sorted list, or -1 if missing.\n\nAnswer:\n",
+      "expected": null,
+      "function_name": "binary_search",
+      "completion": "\n<think>\n<think>\n<think>\n<think>\n\n<think>\nOkay, the solution. I need to find the same for each term in the same for each term in the same thing to get the same",
+      "score": {
+        "correct": false,
+        "error": "no function definition found",
+        "source_excerpt": "",
+        "test_results": []
+      }
+    },
+    {
+      "task_id": "palindrome_function",
+      "kind": "python_function",
+      "prompt": "Question:\nWrite a Python function named is_palindrome that returns True if a string is a palindrome.\n\nAnswer:\n",
+      "expected": null,
+      "function_name": "is_palindrome",
+      "completion": "\n<think>\n<think>\n<think>\n<think>\n<think>\n<think>\nOkay, I need to find the function that's function. I think about the function. I think about the function. I",
+      "score": {
+        "correct": false,
+        "error": "no function definition found",
+        "source_excerpt": "",
+        "test_results": []
+      }
+    }
+  ]
+}

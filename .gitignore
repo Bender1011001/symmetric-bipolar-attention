@@ -1,0 +1,41 @@
+# Training run outputs & checkpoints (kept on disk, not in git)
+results/
+checkpoints/
+*.pt
+*.safetensors
+*.bin
+*.gguf
+
+# Large data archives & datasets (regenerable via build_*_mix.py; kept on disk)
+*.zip
+*.tar.gz
+*.7z
+*.jsonl
+data/*.zip
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Environments
+.venv/
+venv/
+env/
+
+# IDE / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Scratch logs
+*.log

@@ -1,0 +1,43 @@
+{
+  "duplicate_count": 0,
+  "output_files": {
+    "test": "data\\ecot_test.jsonl",
+    "train": "data\\ecot_train.jsonl",
+    "validation": "data\\ecot_validation.jsonl"
+  },
+  "pillar_counts": {
+    "backtracking": 13750,
+    "belief_revision": 13750,
+    "mutual_exclusivity": 13750,
+    "system1_honeypot": 13750
+  },
+  "seed": 20260526,
+  "split_counts": {
+    "test": 2500,
+    "train": 50000,
+    "validation": 2500
+  },
+  "template_counts": {
+    "backtracking_dependency": 2750,
+    "backtracking_graph_path": 2750,
+    "backtracking_latin_square": 2750,
+    "backtracking_maze": 2750,
+    "backtracking_sum_assignment": 2750,
+    "belief_access_control": 2750,
+    "belief_game_rule": 2750,
+    "belief_refund": 2750,
+    "belief_safety_protocol": 2750,
+    "belief_shipping": 2750,
+    "mutual_crypto_digits": 2750,
+    "mutual_inventory_route": 2750,
+    "mutual_machines": 2750,
+    "mutual_rooms": 2750,
+    "mutual_schedule": 2750,
+    "system_average_speed": 2750,
+    "system_bat_ball": 2750,
+    "system_bayes_base_rate": 2750,
+    "system_code_precedence": 2750,
+    "system_percent_reversal": 2750
+  },
+  "total": 55000
+}

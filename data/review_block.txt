@@ -1,0 +1,3624 @@
+
+
+================================================================================<PROBLEM>
+Four researchers, Elena, Dion, Kira, and Cara, each occupy exactly one different room from [103, 104, 201, 102]. Elena is in room 201. Kira is in room 104. Dion is not in room 102. Which room is Dion in?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+A tempting shortcut is to place Dion in room 201, because that room is not the forbidden room 102.
+</PROPOSE>
+<TEST>
+Room 201 is already occupied by Elena. The puzzle states that each researcher occupies a different room.
+</TEST>
+<CONTRADICT>
+The proposed assignment puts both Elena and Dion in room 201, violating strict mutual exclusivity.
+</CONTRADICT>
+<INHIBIT>
+Therefore, Dion in room 201 is strictly false and invalid. Discard that assignment and eliminate room 201 from Dion's possibilities.
+</INHIBIT>
+<RECALCULATE>
+The occupied rooms are 201 for Elena and 104 for Kira. Dion also cannot use 102, so the only remaining room is 103.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Dion is in room 103.
+</FINAL_ANSWER>
+
+<PROBLEM>
+In field log 146502, a 56 lb order to Spokane is being routed. A logistics rule says critical orders normally ship by air. A later exception says any aerosol cartridge must ship by hazmat courier, even when the order is critical. Order Q47502 is a critical order containing an aerosol cartridge. How should it ship?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The first hypothesis is air shipment, because the general critical-order rule points directly to air.
+</PROPOSE>
+<TEST>
+The order also contains a aerosol cartridge. The later exception explicitly covers that item and overrides the normal air rule.
+</TEST>
+<CONTRADICT>
+Air shipment violates the item-specific exception requiring hazmat courier for any aerosol cartridge.
+</CONTRADICT>
+<INHIBIT>
+Therefore, air shipment is strictly false and invalid for this order. Discard the general-rule answer and suppress it for this exception case.
+</INHIBIT>
+<RECALCULATE>
+Apply the narrower exception after recognizing the general rule: aerosol cartridge shipments use hazmat courier.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Ship Order Q47502 by hazmat courier.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A grid robot starts at (46, 38) and must reach (52, 52). It may move north or east one square at a time. Square (47, 38) is blocked. Which first move should it choose?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The locally attractive branch is to move east first, from (46, 38) to (47, 38), because the goal is east of the start.
+</PROPOSE>
+<TEST>
+The first east move lands exactly on (47, 38), which the problem marks as blocked.
+</TEST>
+<CONTRADICT>
+The east-first branch collides with a blocked square before it can make progress.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the east-first branch is strictly false and discarded. Eliminate that branch and suppress the direct-east impulse.
+</INHIBIT>
+<RECALCULATE>
+Backtrack to (46, 38). The north move reaches (46, 39), avoids the blocked square, and still allows later east moves toward (52, 52).
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The robot should move north first.
+</FINAL_ANSWER>
+
+<PROBLEM>
+An index starts at 2640. It rises by 50% and then falls by 40% from the new level. What is the net percentage change from the original index?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting shortcut is to subtract the percentages and claim the net change is 10%.
+</PROPOSE>
+<TEST>
+After the rise, the index is 2640 * 150/100. The fall then multiplies that new value by 60/100, so the combined multiplier is 9/10.
+</TEST>
+<CONTRADICT>
+The subtraction shortcut treats both percentages as if they used the same base, but the 40% fall is applied after the 50% rise.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the 10% subtraction answer is strictly false and invalid. Discard it and eliminate the same-base assumption.
+</INHIBIT>
+<RECALCULATE>
+The true net percent is (9/10 - 1) * 100 = -10%.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The net change is -10%.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Jobs Polishing, Cutting, and Packing must run on three different machines from ['M1', 'M4', 'M5']. Polishing runs on M1. Packing runs on M5. Cutting cannot run on M5. Which machine runs Cutting?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting assignment is Cutting on M1, since the only stated ban names M5.
+</PROPOSE>
+<TEST>
+But M1 is already assigned to Polishing, and every listed job must use a different machine.
+</TEST>
+<CONTRADICT>
+Assigning Cutting to M1 violates the one-job-per-machine constraint.
+</CONTRADICT>
+<INHIBIT>
+Therefore, Cutting on M1 is strictly false and discarded. Eliminate M1 from Cutting's candidate set.
+</INHIBIT>
+<RECALCULATE>
+With M1 used by Polishing and M5 used by Packing, the only remaining machine for Cutting is M4.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Cutting runs on M4.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Return ticket R746506 concerns a $691 web purchase. Store policy says purchases returned within 30 days are refundable. A later exception says calibrated probe purchases are nonrefundable once opened. A customer returns an opened calibrated probe after 15 days. Is the purchase refundable?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The initial answer is refundable, because 15 days is inside the 30-day general window.
+</PROPOSE>
+<TEST>
+The returned product is an opened calibrated probe, and the exception says opened calibrated probe purchases are nonrefundable.
+</TEST>
+<CONTRADICT>
+The refundable answer violates the narrower opened-item exception even though the 30-day rule would otherwise apply.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the refundable conclusion is strictly false and discarded. Eliminate the general 30-day path for this opened exception item.
+</INHIBIT>
+<RECALCULATE>
+Use the specific exception: opened calibrated probe purchases are nonrefundable regardless of being within 15 days.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The purchase is not refundable.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Choose distinct values x, y, z from [11, 18, 66, 75] such that x < y < z and x + y + z = 159. Which value should x take?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The search branch that looks natural is x = 11, because it is the smallest available value.
+</PROPOSE>
+<TEST>
+If x = 11, then y + z must equal 148. The two largest remaining values sum to 141, so the required pair is unavailable.
+</TEST>
+<CONTRADICT>
+The branch x = 11 cannot complete the target sum while keeping x, y, and z distinct and ordered.
+</CONTRADICT>
+<INHIBIT>
+Therefore, x = 11 is strictly false and discarded. Eliminate that search branch and suppress the smallest-value heuristic.
+</INHIBIT>
+<RECALCULATE>
+Backtrack and try x = 18. Then y = 66 and z = 75, and 18 + 66 + 75 = 159.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+x should be 18.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A courier drives 149 miles from the depot to a lab at 100 mph, then drives the same 149 miles back at 96 mph. What is the average speed for the whole round trip?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The intuitive answer is the arithmetic mean: (100 + 96) / 2 = 98 mph.
+</PROPOSE>
+<TEST>
+The round trip covers 298 miles. The travel time is 149/100 + 149/96 hours, not two equal time blocks.
+</TEST>
+<CONTRADICT>
+The arithmetic mean assumes equal time at each speed, but the problem gives equal distances, so 98 mph uses the wrong weighting.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the arithmetic-mean answer is strictly false and discarded. Suppress the equal-time association and eliminate that path.
+</INHIBIT>
+<RECALCULATE>
+Average speed is total distance divided by total time: 298 / (149/100 + 149/96) = 97.96 mph.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The average speed is 97.96 mph.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Jules, Farid, Hale, and Lena each present in a different time slot from ['9:00', '3:00', '11:00', '1:00']. Jules presents at 9:00. Hale presents at 11:00. Farid cannot present at 1:00. Which slot does Farid use?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The surface-level answer is 9:00 for Farid, because it is not the explicitly forbidden slot.
+</PROPOSE>
+<TEST>
+However, 9:00 is already assigned to Jules, and the schedule forbids shared slots.
+</TEST>
+<CONTRADICT>
+The proposed schedule gives 9:00 to two presenters, violating strict mutual exclusivity.
+</CONTRADICT>
+<INHIBIT>
+Therefore, Farid at 9:00 is strictly false and invalid. Discard that duplicate-slot assignment.
+</INHIBIT>
+<RECALCULATE>
+The used slots are 9:00 and 11:00, and Farid cannot use 1:00. The remaining valid slot is 3:00.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Farid presents at 3:00.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Factory protocol says equipment above 72.6 F may resume the test bench after a standard cooldown check. A later exception says if the equipment has a supervisor hold, staff must route to safety review. Unit U46510 is at 73.0 F and has a supervisor hold. What should staff do?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The first answer is to resume the test bench, because the temperature clears the general cooldown rule.
+</PROPOSE>
+<TEST>
+The unit also has a supervisor hold. The exception is more specific than the cooldown rule and changes the allowed action.
+</TEST>
+<CONTRADICT>
+Choosing to resume the test bench violates the exception requiring staff to route to safety review.
+</CONTRADICT>
+<INHIBIT>
+Therefore, choosing to resume the test bench is strictly false and invalid for this unit. Discard that general-rule action and suppress it.
+</INHIBIT>
+<RECALCULATE>
+After applying the exception, staff must route to safety review.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Staff should route to safety review.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Dependency resolver: App Delta requires Core 1.8 because it has not migrated to Core 2.x. The latest MetricPack requires Core 2.26, while MetricPack legacy supports Core 1.8. Which MetricPack variant should be selected?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The attractive branch is to select the latest MetricPack, because dependency resolvers usually prefer newest compatible-looking packages.
+</PROPOSE>
+<TEST>
+Latest MetricPack requires Core 2.26, but App Delta requires Core 1.8.
+</TEST>
+<CONTRADICT>
+The latest-branch creates incompatible Core requirements: Core 1.8 and Core 2.26 cannot both be installed as the same singleton dependency.
+</CONTRADICT>
+<INHIBIT>
+Therefore, latest MetricPack is strictly false and invalid for this resolution. Discard it and eliminate the Core 2.x branch.
+</INHIBIT>
+<RECALCULATE>
+Backtrack to the plugin choice and select MetricPack legacy, which supports Core 1.8 and satisfies App Delta.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Select MetricPack legacy.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Inspection batch D546512 compares two suppliers. Supplier A ships 13500 parts with a 2% defect rate. Supplier B ships 1000 parts with a 10% defect rate. A randomly selected defective part is inspected. What is the probability it came from Supplier A?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting answer is to choose Supplier B, because B has the louder defect rate: 10% is larger than 2%.
+</PROPOSE>
+<TEST>
+Supplier A contributes 13500 * 2% = 270 defective parts. Supplier B contributes 1000 * 10% = 100 defective parts.
+</TEST>
+<CONTRADICT>
+The higher defect-rate shortcut ignores base rates; it predicts B even though A contributes 270 defective parts versus B's 100.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the Supplier B shortcut is strictly false and invalidates the answer path. Discard it and suppress the rate-only association.
+</INHIBIT>
+<RECALCULATE>
+Conditioning on defectiveness gives P(A | defective) = 270/(270 + 100) = 0.7297.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The probability is 0.7297, or 72.97%.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Codes Sigma, Alpha, Tau, and Delta each map to one different digit from [3, 6, 1, 4]. Sigma maps to 3. Alpha maps to 6. Tau maps to 1. Which digit maps to Delta?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting guess is 6, because it appears as a salient assigned digit near Delta in the code list.
+</PROPOSE>
+<TEST>
+Digit 6 is already mapped to Alpha. The mapping is one-to-one, so no second symbol can reuse it.
+</TEST>
+<CONTRADICT>
+Mapping Delta to 6 violates the one-symbol-per-digit constraint.
+</CONTRADICT>
+<INHIBIT>
+Therefore, Delta -> 6 is strictly false and discarded. Eliminate digit 6 and suppress that duplicate mapping.
+</INHIBIT>
+<RECALCULATE>
+The used digits are 3, 6, and 1; the only unused digit in [3, 6, 1, 4] is 4.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Delta maps to 4.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Access ticket A446514 occurs during the day shift. Access policy says a badge holder may enter the clean room. A later exception says that during a chemical spill flag, even badge holders must block entry until cleared. Ada has a valid badge, but the clean room is under a chemical spill flag. Should Ada enter?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The obvious answer is yes, because Ada has a valid badge under the general access rule.
+</PROPOSE>
+<TEST>
+The clean room is also under a chemical spill flag, and that later exception applies to badge holders.
+</TEST>
+<CONTRADICT>
+Allowing entry violates the exception requiring staff to block entry until cleared.
+</CONTRADICT>
+<INHIBIT>
+Therefore, allowing entry is strictly false and discarded. Eliminate the badge-only decision path and suppress it while the exception is active.
+</INHIBIT>
+<RECALCULATE>
+The active exception controls the outcome, so staff must block entry until cleared.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+No. Staff must block entry until cleared.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A graph search starts at S779. From S779, it can go to B92 or G969. B92 leads only to forbidden terminal X358. G969 leads to goal T854. Which branch should the search keep?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The first branch is S779 -> B92, because it is listed first and looks immediately reachable.
+</PROPOSE>
+<TEST>
+Following B92 gives only B92 -> X358, and X358 is forbidden.
+</TEST>
+<CONTRADICT>
+The branch through B92 cannot reach T854; it terminates at forbidden node X358.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the B92 branch is strictly false and discarded. Eliminate it and suppress the listed-first search bias.
+</INHIBIT>
+<RECALCULATE>
+Backtrack to S779 and keep S779 -> G969 -> T854, the branch that reaches the goal.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Keep the S779 -> G969 branch.
+</FINAL_ANSWER>
+
+<PROBLEM>
+What does this Python snippet print?
+
+```python
+total_46516 = 39 + 15 * 8
+print(total_46516)
+```
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting trace is to read left to right, compute (39 + 15) * 8, and predict 432.
+</PROPOSE>
+<TEST>
+Python multiplication has higher precedence than addition, so 15 * 8 must be evaluated before adding 39.
+</TEST>
+<CONTRADICT>
+The left-to-right trace violates Python operator precedence; (39 + 15) * 8 is not the expression the interpreter evaluates.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the printed value 432 is strictly false and discarded. Eliminate the left-to-right parse and suppress that branch.
+</INHIBIT>
+<RECALCULATE>
+The actual expression is 39 + (15 * 8) = 39 + 120 = 159.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+It prints 159.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Dispatch manifest M346517 lists three delivery routes: east lab, south depot, and west pharmacy. They must each use a different van from ['Van A', 'Van E', 'Van D']. east lab uses Van A. west pharmacy uses Van D. south depot cannot use Van D. Which van must serve south depot?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The obvious but wrong move is to assign south depot to Van A, since the explicit ban only mentions Van D.
+</PROPOSE>
+<TEST>
+Van A is already committed to east lab. A van cannot be assigned to two simultaneous routes.
+</TEST>
+<CONTRADICT>
+The assignment duplicates Van A, violating the strict one-route-per-van constraint.
+</CONTRADICT>
+<INHIBIT>
+Therefore, south depot using Van A is strictly false and invalid. Discard and eliminate that van from the route's options.
+</INHIBIT>
+<RECALCULATE>
+With Van A and Van D unavailable, the only remaining van for south depot is Van E.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+south depot must use Van E.
+</FINAL_ANSWER>
+
+<PROBLEM>
+In round G646518 of a card game, red cards normally score 3 times their printed value. A later rule says a red card with a Seal token ignores all multipliers. A red card has printed value 80 and a Seal token. What score does it produce?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The first answer is 240, because a red card normally gets the 3x multiplier.
+</PROPOSE>
+<TEST>
+The card has a Seal token, and the later rule says such a card ignores all multipliers.
+</TEST>
+<CONTRADICT>
+Scoring 240 violates the no-multiplier exception created by the Seal token.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the multiplied score 240 is strictly false and invalid. Discard it and suppress the red-card multiplier association.
+</INHIBIT>
+<RECALCULATE>
+With the multiplier eliminated, the score is just the printed value: 80.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The card scores 80.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A 3 by 3 Latin square uses symbols ['red', 'green', 'teal']; each row and column must contain each symbol exactly once. In the top row, left is red and center is green. In the right column, the middle cell is red and the bottom cell is green. What symbol goes in the top-right cell?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting branch is to put red in the top-right cell because red appears in nearby clues.
+</PROPOSE>
+<TEST>
+The top row already has red in the left cell, and the right column also already has red in the middle cell.
+</TEST>
+<CONTRADICT>
+Placing red in the top-right cell violates both row exclusivity and column exclusivity.
+</CONTRADICT>
+<INHIBIT>
+Therefore, red in that cell is strictly false and invalid. Discard it and eliminate the repeated-symbol branch.
+</INHIBIT>
+<RECALCULATE>
+The top row already contains red and green, so it is missing teal. The right column also contains red and green, so it is missing teal. The only legal symbol is teal.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The top-right cell must be teal.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A hardcover book and a bookmark together cost $80.80. The hardcover book costs $45.40 more than the bookmark. What is the price of the bookmark?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting answer is that the bookmark costs $45.40, because $45.40 is the loud number in the comparison.
+</PROPOSE>
+<TEST>
+If the bookmark cost $45.40, then the hardcover book would cost $90.80. Their total would be $136.20, not $80.80.
+</TEST>
+<CONTRADICT>
+The proposed bookmark price violates the total-cost equation: cheap + (cheap + difference) must equal $80.80.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the assumption that the bookmark costs $45.40 is strictly false and discarded. Eliminate that autocomplete answer and suppress its association with the difference amount.
+</INHIBIT>
+<RECALCULATE>
+Let c be the bookmark price in cents. Then c + (c + 4540) = 8080, so 2c = 3540 and c = 1770 cents.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The bookmark costs $17.70.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Four researchers, Jules, Kira, Iris, and Cara, each occupy exactly one different room from [101, 104, 203, 204]. Jules is in room 203. Iris is in room 104. Kira is not in room 204. Which room is Kira in?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+A tempting shortcut is to place Kira in room 203, because that room is not the forbidden room 204.
+</PROPOSE>
+<TEST>
+Room 203 is already occupied by Jules. The puzzle states that each researcher occupies a different room.
+</TEST>
+<CONTRADICT>
+The proposed assignment puts both Jules and Kira in room 203, violating strict mutual exclusivity.
+</CONTRADICT>
+<INHIBIT>
+Therefore, Kira in room 203 is strictly false and invalid. Discard that assignment and eliminate room 203 from Kira's possibilities.
+</INHIBIT>
+<RECALCULATE>
+The occupied rooms are 203 for Jules and 104 for Iris. Kira also cannot use 204, so the only remaining room is 101.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Kira is in room 101.
+</FINAL_ANSWER>
+
+<PROBLEM>
+In verification deck 146522, a 71 lb order to Reno is being routed. A logistics rule says critical orders normally ship by air. A later exception says any temperature probe must ship by cold-chain ground, even when the order is critical. Order Q47522 is a critical order containing a temperature probe. How should it ship?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The first hypothesis is air shipment, because the general critical-order rule points directly to air.
+</PROPOSE>
+<TEST>
+The order also contains a temperature probe. The later exception explicitly covers that item and overrides the normal air rule.
+</TEST>
+<CONTRADICT>
+Air shipment violates the item-specific exception requiring cold-chain ground for any temperature probe.
+</CONTRADICT>
+<INHIBIT>
+Therefore, air shipment is strictly false and invalid for this order. Discard the general-rule answer and suppress it for this exception case.
+</INHIBIT>
+<RECALCULATE>
+Apply the narrower exception after recognizing the general rule: temperature probe shipments use cold-chain ground.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Ship Order Q47522 by cold-chain ground.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A grid robot starts at (13, 47) and must reach (26, 56). It may move north or east one square at a time. Square (14, 47) is blocked. Which first move should it choose?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The locally attractive branch is to move east first, from (13, 47) to (14, 47), because the goal is east of the start.
+</PROPOSE>
+<TEST>
+The first east move lands exactly on (14, 47), which the problem marks as blocked.
+</TEST>
+<CONTRADICT>
+The east-first branch collides with a blocked square before it can make progress.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the east-first branch is strictly false and discarded. Eliminate that branch and suppress the direct-east impulse.
+</INHIBIT>
+<RECALCULATE>
+Backtrack to (13, 47). The north move reaches (13, 48), avoids the blocked square, and still allows later east moves toward (26, 56).
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The robot should move north first.
+</FINAL_ANSWER>
+
+<PROBLEM>
+An index starts at 1860. It rises by 40% and then falls by 15% from the new level. What is the net percentage change from the original index?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting shortcut is to subtract the percentages and claim the net change is 25%.
+</PROPOSE>
+<TEST>
+After the rise, the index is 1860 * 140/100. The fall then multiplies that new value by 85/100, so the combined multiplier is 119/100.
+</TEST>
+<CONTRADICT>
+The subtraction shortcut treats both percentages as if they used the same base, but the 15% fall is applied after the 40% rise.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the 25% subtraction answer is strictly false and invalid. Discard it and eliminate the same-base assumption.
+</INHIBIT>
+<RECALCULATE>
+The true net percent is (119/100 - 1) * 100 = 19%.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The net change is 19%.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Jobs Polishing, Welding, and Cutting must run on three different machines from ['M2', 'M3', 'M5']. Polishing runs on M2. Cutting runs on M5. Welding cannot run on M5. Which machine runs Welding?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting assignment is Welding on M2, since the only stated ban names M5.
+</PROPOSE>
+<TEST>
+But M2 is already assigned to Polishing, and every listed job must use a different machine.
+</TEST>
+<CONTRADICT>
+Assigning Welding to M2 violates the one-job-per-machine constraint.
+</CONTRADICT>
+<INHIBIT>
+Therefore, Welding on M2 is strictly false and discarded. Eliminate M2 from Welding's candidate set.
+</INHIBIT>
+<RECALCULATE>
+With M2 used by Polishing and M5 used by Cutting, the only remaining machine for Welding is M3.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Welding runs on M3.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Return ticket R746526 concerns a $1719 web purchase. Store policy says purchases returned within 30 days are refundable. A later exception says custom engraved device purchases are nonrefundable once opened. A customer returns an opened custom engraved device after 24 days. Is the purchase refundable?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The initial answer is refundable, because 24 days is inside the 30-day general window.
+</PROPOSE>
+<TEST>
+The returned product is an opened custom engraved device, and the exception says opened custom engraved device purchases are nonrefundable.
+</TEST>
+<CONTRADICT>
+The refundable answer violates the narrower opened-item exception even though the 30-day rule would otherwise apply.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the refundable conclusion is strictly false and discarded. Eliminate the general 30-day path for this opened exception item.
+</INHIBIT>
+<RECALCULATE>
+Use the specific exception: opened custom engraved device purchases are nonrefundable regardless of being within 24 days.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The purchase is not refundable.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Choose distinct values x, y, z from [8, 44, 46, 50] such that x < y < z and x + y + z = 140. Which value should x take?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The search branch that looks natural is x = 8, because it is the smallest available value.
+</PROPOSE>
+<TEST>
+If x = 8, then y + z must equal 132. The two largest remaining values sum to 96, so the required pair is unavailable.
+</TEST>
+<CONTRADICT>
+The branch x = 8 cannot complete the target sum while keeping x, y, and z distinct and ordered.
+</CONTRADICT>
+<INHIBIT>
+Therefore, x = 8 is strictly false and discarded. Eliminate that search branch and suppress the smallest-value heuristic.
+</INHIBIT>
+<RECALCULATE>
+Backtrack and try x = 44. Then y = 46 and z = 50, and 44 + 46 + 50 = 140.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+x should be 44.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A courier drives 69 miles from the depot to a lab at 108 mph, then drives the same 69 miles back at 28 mph. What is the average speed for the whole round trip?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The intuitive answer is the arithmetic mean: (108 + 28) / 2 = 68 mph.
+</PROPOSE>
+<TEST>
+The round trip covers 138 miles. The travel time is 69/108 + 69/28 hours, not two equal time blocks.
+</TEST>
+<CONTRADICT>
+The arithmetic mean assumes equal time at each speed, but the problem gives equal distances, so 68 mph uses the wrong weighting.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the arithmetic-mean answer is strictly false and discarded. Suppress the equal-time association and eliminate that path.
+</INHIBIT>
+<RECALCULATE>
+Average speed is total distance divided by total time: 138 / (69/108 + 69/28) = 44.47 mph.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The average speed is 44.47 mph.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Farid, Elena, Lena, and Cara each present in a different time slot from ['9:00', '2:00', '1:00', '10:00']. Farid presents at 9:00. Lena presents at 1:00. Elena cannot present at 10:00. Which slot does Elena use?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The surface-level answer is 9:00 for Elena, because it is not the explicitly forbidden slot.
+</PROPOSE>
+<TEST>
+However, 9:00 is already assigned to Farid, and the schedule forbids shared slots.
+</TEST>
+<CONTRADICT>
+The proposed schedule gives 9:00 to two presenters, violating strict mutual exclusivity.
+</CONTRADICT>
+<INHIBIT>
+Therefore, Elena at 9:00 is strictly false and invalid. Discard that duplicate-slot assignment.
+</INHIBIT>
+<RECALCULATE>
+The used slots are 9:00 and 1:00, and Elena cannot use 10:00. The remaining valid slot is 2:00.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Elena presents at 2:00.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Factory protocol says equipment above 77.1 F may restart the conveyor after a standard cooldown check. A later exception says if the equipment has a supervisor hold, staff must keep the machine offline. Unit U46530 is at 78.8 F and has a supervisor hold. What should staff do?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The first answer is to restart the conveyor, because the temperature clears the general cooldown rule.
+</PROPOSE>
+<TEST>
+The unit also has a supervisor hold. The exception is more specific than the cooldown rule and changes the allowed action.
+</TEST>
+<CONTRADICT>
+Choosing to restart the conveyor violates the exception requiring staff to keep the machine offline.
+</CONTRADICT>
+<INHIBIT>
+Therefore, choosing to restart the conveyor is strictly false and invalid for this unit. Discard that general-rule action and suppress it.
+</INHIBIT>
+<RECALCULATE>
+After applying the exception, staff must keep the machine offline.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Staff should keep the machine offline.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Dependency resolver: App Kepler requires Core 1.20 because it has not migrated to Core 2.x. The latest AuditPack requires Core 2.18, while AuditPack legacy supports Core 1.20. Which AuditPack variant should be selected?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The attractive branch is to select the latest AuditPack, because dependency resolvers usually prefer newest compatible-looking packages.
+</PROPOSE>
+<TEST>
+Latest AuditPack requires Core 2.18, but App Kepler requires Core 1.20.
+</TEST>
+<CONTRADICT>
+The latest-branch creates incompatible Core requirements: Core 1.20 and Core 2.18 cannot both be installed as the same singleton dependency.
+</CONTRADICT>
+<INHIBIT>
+Therefore, latest AuditPack is strictly false and invalid for this resolution. Discard it and eliminate the Core 2.x branch.
+</INHIBIT>
+<RECALCULATE>
+Backtrack to the plugin choice and select AuditPack legacy, which supports Core 1.20 and satisfies App Kepler.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Select AuditPack legacy.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Inspection batch D546532 compares two suppliers. Supplier A ships 11500 parts with a 3% defect rate. Supplier B ships 3500 parts with a 6% defect rate. A randomly selected defective part is inspected. What is the probability it came from Supplier A?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting answer is to choose Supplier B, because B has the louder defect rate: 6% is larger than 3%.
+</PROPOSE>
+<TEST>
+Supplier A contributes 11500 * 3% = 345 defective parts. Supplier B contributes 3500 * 6% = 210 defective parts.
+</TEST>
+<CONTRADICT>
+The higher defect-rate shortcut ignores base rates; it predicts B even though A contributes 345 defective parts versus B's 210.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the Supplier B shortcut is strictly false and invalidates the answer path. Discard it and suppress the rate-only association.
+</INHIBIT>
+<RECALCULATE>
+Conditioning on defectiveness gives P(A | defective) = 345/(345 + 210) = 0.6216.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The probability is 0.6216, or 62.16%.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Codes Tau, Delta, Beta, and Alpha each map to one different digit from [3, 6, 1, 2]. Tau maps to 3. Delta maps to 6. Beta maps to 1. Which digit maps to Alpha?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting guess is 6, because it appears as a salient assigned digit near Alpha in the code list.
+</PROPOSE>
+<TEST>
+Digit 6 is already mapped to Delta. The mapping is one-to-one, so no second symbol can reuse it.
+</TEST>
+<CONTRADICT>
+Mapping Alpha to 6 violates the one-symbol-per-digit constraint.
+</CONTRADICT>
+<INHIBIT>
+Therefore, Alpha -> 6 is strictly false and discarded. Eliminate digit 6 and suppress that duplicate mapping.
+</INHIBIT>
+<RECALCULATE>
+The used digits are 3, 6, and 1; the only unused digit in [3, 6, 1, 2] is 2.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Alpha maps to 2.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Access ticket A446534 occurs during the swing shift. Access policy says a badge holder may enter the clean room. A later exception says that during a chemical spill flag, even badge holders must block entry until cleared. Ada has a valid badge, but the clean room is under a chemical spill flag. Should Ada enter?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The obvious answer is yes, because Ada has a valid badge under the general access rule.
+</PROPOSE>
+<TEST>
+The clean room is also under a chemical spill flag, and that later exception applies to badge holders.
+</TEST>
+<CONTRADICT>
+Allowing entry violates the exception requiring staff to block entry until cleared.
+</CONTRADICT>
+<INHIBIT>
+Therefore, allowing entry is strictly false and discarded. Eliminate the badge-only decision path and suppress it while the exception is active.
+</INHIBIT>
+<RECALCULATE>
+The active exception controls the outcome, so staff must block entry until cleared.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+No. Staff must block entry until cleared.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A graph search starts at S949. From S949, it can go to B824 or G483. B824 leads only to forbidden terminal X125. G483 leads to goal T550. Which branch should the search keep?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The first branch is S949 -> B824, because it is listed first and looks immediately reachable.
+</PROPOSE>
+<TEST>
+Following B824 gives only B824 -> X125, and X125 is forbidden.
+</TEST>
+<CONTRADICT>
+The branch through B824 cannot reach T550; it terminates at forbidden node X125.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the B824 branch is strictly false and discarded. Eliminate it and suppress the listed-first search bias.
+</INHIBIT>
+<RECALCULATE>
+Backtrack to S949 and keep S949 -> G483 -> T550, the branch that reaches the goal.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Keep the S949 -> G483 branch.
+</FINAL_ANSWER>
+
+<PROBLEM>
+What does this Python snippet print?
+
+```python
+total_46536 = 37 + 4 * 4
+print(total_46536)
+```
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting trace is to read left to right, compute (37 + 4) * 4, and predict 164.
+</PROPOSE>
+<TEST>
+Python multiplication has higher precedence than addition, so 4 * 4 must be evaluated before adding 37.
+</TEST>
+<CONTRADICT>
+The left-to-right trace violates Python operator precedence; (37 + 4) * 4 is not the expression the interpreter evaluates.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the printed value 164 is strictly false and discarded. Eliminate the left-to-right parse and suppress that branch.
+</INHIBIT>
+<RECALCULATE>
+The actual expression is 37 + (4 * 4) = 37 + 16 = 53.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+It prints 53.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Dispatch manifest M346537 lists three delivery routes: east lab, central ward, and west pharmacy. They must each use a different van from ['Van B', 'Van A', 'Van E']. east lab uses Van B. west pharmacy uses Van E. central ward cannot use Van E. Which van must serve central ward?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The obvious but wrong move is to assign central ward to Van B, since the explicit ban only mentions Van E.
+</PROPOSE>
+<TEST>
+Van B is already committed to east lab. A van cannot be assigned to two simultaneous routes.
+</TEST>
+<CONTRADICT>
+The assignment duplicates Van B, violating the strict one-route-per-van constraint.
+</CONTRADICT>
+<INHIBIT>
+Therefore, central ward using Van B is strictly false and invalid. Discard and eliminate that van from the route's options.
+</INHIBIT>
+<RECALCULATE>
+With Van B and Van E unavailable, the only remaining van for central ward is Van A.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+central ward must use Van A.
+</FINAL_ANSWER>
+
+<PROBLEM>
+In round G646538 of a card game, red cards normally score 3 times their printed value. A later rule says a red card with a Seal token ignores all multipliers. A red card has printed value 18 and a Seal token. What score does it produce?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The first answer is 54, because a red card normally gets the 3x multiplier.
+</PROPOSE>
+<TEST>
+The card has a Seal token, and the later rule says such a card ignores all multipliers.
+</TEST>
+<CONTRADICT>
+Scoring 54 violates the no-multiplier exception created by the Seal token.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the multiplied score 54 is strictly false and invalid. Discard it and suppress the red-card multiplier association.
+</INHIBIT>
+<RECALCULATE>
+With the multiplier eliminated, the score is just the printed value: 18.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The card scores 18.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A 3 by 3 Latin square uses symbols ['coral', 'white', 'purple']; each row and column must contain each symbol exactly once. In the top row, left is coral and center is white. In the right column, the middle cell is coral and the bottom cell is white. What symbol goes in the top-right cell?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting branch is to put coral in the top-right cell because coral appears in nearby clues.
+</PROPOSE>
+<TEST>
+The top row already has coral in the left cell, and the right column also already has coral in the middle cell.
+</TEST>
+<CONTRADICT>
+Placing coral in the top-right cell violates both row exclusivity and column exclusivity.
+</CONTRADICT>
+<INHIBIT>
+Therefore, coral in that cell is strictly false and invalid. Discard it and eliminate the repeated-symbol branch.
+</INHIBIT>
+<RECALCULATE>
+The top row already contains coral and white, so it is missing purple. The right column also contains coral and white, so it is missing purple. The only legal symbol is purple.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The top-right cell must be purple.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A sensor and a cable together cost $73.95. The sensor costs $40.25 more than the cable. What is the price of the cable?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting answer is that the cable costs $40.25, because $40.25 is the loud number in the comparison.
+</PROPOSE>
+<TEST>
+If the cable cost $40.25, then the sensor would cost $80.50. Their total would be $120.75, not $73.95.
+</TEST>
+<CONTRADICT>
+The proposed cable price violates the total-cost equation: cheap + (cheap + difference) must equal $73.95.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the assumption that the cable costs $40.25 is strictly false and discarded. Eliminate that autocomplete answer and suppress its association with the difference amount.
+</INHIBIT>
+<RECALCULATE>
+Let c be the cable price in cents. Then c + (c + 4025) = 7395, so 2c = 3370 and c = 1685 cents.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The cable costs $16.85.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Four researchers, Ada, Ben, Farid, and Jules, each occupy exactly one different room from [204, 202, 101, 103]. Ada is in room 101. Farid is in room 202. Ben is not in room 103. Which room is Ben in?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+A tempting shortcut is to place Ben in room 101, because that room is not the forbidden room 103.
+</PROPOSE>
+<TEST>
+Room 101 is already occupied by Ada. The puzzle states that each researcher occupies a different room.
+</TEST>
+<CONTRADICT>
+The proposed assignment puts both Ada and Ben in room 101, violating strict mutual exclusivity.
+</CONTRADICT>
+<INHIBIT>
+Therefore, Ben in room 101 is strictly false and invalid. Discard that assignment and eliminate room 101 from Ben's possibilities.
+</INHIBIT>
+<RECALCULATE>
+The occupied rooms are 101 for Ada and 202 for Farid. Ben also cannot use 103, so the only remaining room is 204.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Ben is in room 204.
+</FINAL_ANSWER>
+
+<PROBLEM>
+In field log 146542, a 2 lb order to Akron is being routed. A logistics rule says same-day orders normally ship by air. A later exception says any battery pack must ship by cold-chain ground, even when the order is same-day. Order Q47542 is a same-day order containing a battery pack. How should it ship?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The first hypothesis is air shipment, because the general same-day-order rule points directly to air.
+</PROPOSE>
+<TEST>
+The order also contains a battery pack. The later exception explicitly covers that item and overrides the normal air rule.
+</TEST>
+<CONTRADICT>
+Air shipment violates the item-specific exception requiring cold-chain ground for any battery pack.
+</CONTRADICT>
+<INHIBIT>
+Therefore, air shipment is strictly false and invalid for this order. Discard the general-rule answer and suppress it for this exception case.
+</INHIBIT>
+<RECALCULATE>
+Apply the narrower exception after recognizing the general rule: battery pack shipments use cold-chain ground.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Ship Order Q47542 by cold-chain ground.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A grid robot starts at (7, 43) and must reach (11, 51). It may move north or east one square at a time. Square (8, 43) is blocked. Which first move should it choose?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The locally attractive branch is to move east first, from (7, 43) to (8, 43), because the goal is east of the start.
+</PROPOSE>
+<TEST>
+The first east move lands exactly on (8, 43), which the problem marks as blocked.
+</TEST>
+<CONTRADICT>
+The east-first branch collides with a blocked square before it can make progress.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the east-first branch is strictly false and discarded. Eliminate that branch and suppress the direct-east impulse.
+</INHIBIT>
+<RECALCULATE>
+Backtrack to (7, 43). The north move reaches (7, 44), avoids the blocked square, and still allows later east moves toward (11, 51).
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The robot should move north first.
+</FINAL_ANSWER>
+
+<PROBLEM>
+An index starts at 570. It rises by 10% and then falls by 25% from the new level. What is the net percentage change from the original index?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting shortcut is to subtract the percentages and claim the net change is -15%.
+</PROPOSE>
+<TEST>
+After the rise, the index is 570 * 110/100. The fall then multiplies that new value by 75/100, so the combined multiplier is 33/40.
+</TEST>
+<CONTRADICT>
+The subtraction shortcut treats both percentages as if they used the same base, but the 25% fall is applied after the 10% rise.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the -15% subtraction answer is strictly false and invalid. Discard it and eliminate the same-base assumption.
+</INHIBIT>
+<RECALCULATE>
+The true net percent is (33/40 - 1) * 100 = -17.50%.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The net change is -17.50%.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Jobs Packing, Cutting, and Testing must run on three different machines from ['M3', 'M2', 'M1']. Packing runs on M3. Testing runs on M1. Cutting cannot run on M1. Which machine runs Cutting?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting assignment is Cutting on M3, since the only stated ban names M1.
+</PROPOSE>
+<TEST>
+But M3 is already assigned to Packing, and every listed job must use a different machine.
+</TEST>
+<CONTRADICT>
+Assigning Cutting to M3 violates the one-job-per-machine constraint.
+</CONTRADICT>
+<INHIBIT>
+Therefore, Cutting on M3 is strictly false and discarded. Eliminate M3 from Cutting's candidate set.
+</INHIBIT>
+<RECALCULATE>
+With M3 used by Packing and M1 used by Testing, the only remaining machine for Cutting is M2.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Cutting runs on M2.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Return ticket R746546 concerns a $1214 web purchase. Store policy says purchases returned within 30 days are refundable. A later exception says clearance monitor purchases are nonrefundable once opened. A customer returns an opened clearance monitor after 15 days. Is the purchase refundable?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The initial answer is refundable, because 15 days is inside the 30-day general window.
+</PROPOSE>
+<TEST>
+The returned product is an opened clearance monitor, and the exception says opened clearance monitor purchases are nonrefundable.
+</TEST>
+<CONTRADICT>
+The refundable answer violates the narrower opened-item exception even though the 30-day rule would otherwise apply.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the refundable conclusion is strictly false and discarded. Eliminate the general 30-day path for this opened exception item.
+</INHIBIT>
+<RECALCULATE>
+Use the specific exception: opened clearance monitor purchases are nonrefundable regardless of being within 15 days.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The purchase is not refundable.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Choose distinct values x, y, z from [25, 26, 41, 73] such that x < y < z and x + y + z = 140. Which value should x take?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The search branch that looks natural is x = 25, because it is the smallest available value.
+</PROPOSE>
+<TEST>
+If x = 25, then y + z must equal 115. The two largest remaining values sum to 114, so the required pair is unavailable.
+</TEST>
+<CONTRADICT>
+The branch x = 25 cannot complete the target sum while keeping x, y, and z distinct and ordered.
+</CONTRADICT>
+<INHIBIT>
+Therefore, x = 25 is strictly false and discarded. Eliminate that search branch and suppress the smallest-value heuristic.
+</INHIBIT>
+<RECALCULATE>
+Backtrack and try x = 26. Then y = 41 and z = 73, and 26 + 41 + 73 = 140.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+x should be 26.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A courier drives 368 miles from the depot to a lab at 22 mph, then drives the same 368 miles back at 114 mph. What is the average speed for the whole round trip?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The intuitive answer is the arithmetic mean: (22 + 114) / 2 = 68 mph.
+</PROPOSE>
+<TEST>
+The round trip covers 736 miles. The travel time is 368/22 + 368/114 hours, not two equal time blocks.
+</TEST>
+<CONTRADICT>
+The arithmetic mean assumes equal time at each speed, but the problem gives equal distances, so 68 mph uses the wrong weighting.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the arithmetic-mean answer is strictly false and discarded. Suppress the equal-time association and eliminate that path.
+</INHIBIT>
+<RECALCULATE>
+Average speed is total distance divided by total time: 736 / (368/22 + 368/114) = 36.88 mph.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The average speed is 36.88 mph.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Gia, Kira, Dion, and Iris each present in a different time slot from ['2:00', '11:00', '10:00', '3:00']. Gia presents at 2:00. Dion presents at 10:00. Kira cannot present at 3:00. Which slot does Kira use?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The surface-level answer is 2:00 for Kira, because it is not the explicitly forbidden slot.
+</PROPOSE>
+<TEST>
+However, 2:00 is already assigned to Gia, and the schedule forbids shared slots.
+</TEST>
+<CONTRADICT>
+The proposed schedule gives 2:00 to two presenters, violating strict mutual exclusivity.
+</CONTRADICT>
+<INHIBIT>
+Therefore, Kira at 2:00 is strictly false and invalid. Discard that duplicate-slot assignment.
+</INHIBIT>
+<RECALCULATE>
+The used slots are 2:00 and 10:00, and Kira cannot use 3:00. The remaining valid slot is 11:00.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Kira presents at 11:00.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Factory protocol says equipment above 72.5 F may release the robot arm after a standard cooldown check. A later exception says if the equipment has an overpressure warning, staff must escalate to the floor lead. Unit U46550 is at 73.5 F and has an overpressure warning. What should staff do?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The first answer is to release the robot arm, because the temperature clears the general cooldown rule.
+</PROPOSE>
+<TEST>
+The unit also has an overpressure warning. The exception is more specific than the cooldown rule and changes the allowed action.
+</TEST>
+<CONTRADICT>
+Choosing to release the robot arm violates the exception requiring staff to escalate to the floor lead.
+</CONTRADICT>
+<INHIBIT>
+Therefore, choosing to release the robot arm is strictly false and invalid for this unit. Discard that general-rule action and suppress it.
+</INHIBIT>
+<RECALCULATE>
+After applying the exception, staff must escalate to the floor lead.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Staff should escalate to the floor lead.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Dependency resolver: App Atlas requires Core 1.8 because it has not migrated to Core 2.x. The latest GraphPack requires Core 2.9, while GraphPack legacy supports Core 1.8. Which GraphPack variant should be selected?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The attractive branch is to select the latest GraphPack, because dependency resolvers usually prefer newest compatible-looking packages.
+</PROPOSE>
+<TEST>
+Latest GraphPack requires Core 2.9, but App Atlas requires Core 1.8.
+</TEST>
+<CONTRADICT>
+The latest-branch creates incompatible Core requirements: Core 1.8 and Core 2.9 cannot both be installed as the same singleton dependency.
+</CONTRADICT>
+<INHIBIT>
+Therefore, latest GraphPack is strictly false and invalid for this resolution. Discard it and eliminate the Core 2.x branch.
+</INHIBIT>
+<RECALCULATE>
+Backtrack to the plugin choice and select GraphPack legacy, which supports Core 1.8 and satisfies App Atlas.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Select GraphPack legacy.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Inspection batch D546552 compares two suppliers. Supplier A ships 14700 parts with a 4% defect rate. Supplier B ships 3900 parts with a 15% defect rate. A randomly selected defective part is inspected. What is the probability it came from Supplier A?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting answer is to choose Supplier B, because B has the louder defect rate: 15% is larger than 4%.
+</PROPOSE>
+<TEST>
+Supplier A contributes 14700 * 4% = 588 defective parts. Supplier B contributes 3900 * 15% = 585 defective parts.
+</TEST>
+<CONTRADICT>
+The higher defect-rate shortcut ignores base rates; it predicts B even though A contributes 588 defective parts versus B's 585.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the Supplier B shortcut is strictly false and invalidates the answer path. Discard it and suppress the rate-only association.
+</INHIBIT>
+<RECALCULATE>
+Conditioning on defectiveness gives P(A | defective) = 588/(588 + 585) = 0.5013.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The probability is 0.5013, or 50.13%.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Codes Delta, Tau, Gamma, and Alpha each map to one different digit from [6, 4, 2, 1]. Delta maps to 6. Tau maps to 4. Gamma maps to 2. Which digit maps to Alpha?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting guess is 4, because it appears as a salient assigned digit near Alpha in the code list.
+</PROPOSE>
+<TEST>
+Digit 4 is already mapped to Tau. The mapping is one-to-one, so no second symbol can reuse it.
+</TEST>
+<CONTRADICT>
+Mapping Alpha to 4 violates the one-symbol-per-digit constraint.
+</CONTRADICT>
+<INHIBIT>
+Therefore, Alpha -> 4 is strictly false and discarded. Eliminate digit 4 and suppress that duplicate mapping.
+</INHIBIT>
+<RECALCULATE>
+The used digits are 6, 4, and 2; the only unused digit in [6, 4, 2, 1] is 1.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Alpha maps to 1.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Access ticket A446554 occurs during the night shift. Access policy says a badge holder may enter the clean room. A later exception says that during a maintenance lockout, even badge holders must route to the supervisor. Lena has a valid badge, but the clean room is under a maintenance lockout. Should Lena enter?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The obvious answer is yes, because Lena has a valid badge under the general access rule.
+</PROPOSE>
+<TEST>
+The clean room is also under a maintenance lockout, and that later exception applies to badge holders.
+</TEST>
+<CONTRADICT>
+Allowing entry violates the exception requiring staff to route to the supervisor.
+</CONTRADICT>
+<INHIBIT>
+Therefore, allowing entry is strictly false and discarded. Eliminate the badge-only decision path and suppress it while the exception is active.
+</INHIBIT>
+<RECALCULATE>
+The active exception controls the outcome, so staff must route to the supervisor.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+No. Staff must route to the supervisor.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A graph search starts at S418. From S418, it can go to B648 or G966. B648 leads only to forbidden terminal X526. G966 leads to goal T674. Which branch should the search keep?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The first branch is S418 -> B648, because it is listed first and looks immediately reachable.
+</PROPOSE>
+<TEST>
+Following B648 gives only B648 -> X526, and X526 is forbidden.
+</TEST>
+<CONTRADICT>
+The branch through B648 cannot reach T674; it terminates at forbidden node X526.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the B648 branch is strictly false and discarded. Eliminate it and suppress the listed-first search bias.
+</INHIBIT>
+<RECALCULATE>
+Backtrack to S418 and keep S418 -> G966 -> T674, the branch that reaches the goal.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Keep the S418 -> G966 branch.
+</FINAL_ANSWER>
+
+<PROBLEM>
+What does this Python snippet print?
+
+```python
+metric_46556 = 2 + 13 * 6
+print(metric_46556)
+```
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting trace is to read left to right, compute (2 + 13) * 6, and predict 90.
+</PROPOSE>
+<TEST>
+Python multiplication has higher precedence than addition, so 13 * 6 must be evaluated before adding 2.
+</TEST>
+<CONTRADICT>
+The left-to-right trace violates Python operator precedence; (2 + 13) * 6 is not the expression the interpreter evaluates.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the printed value 90 is strictly false and discarded. Eliminate the left-to-right parse and suppress that branch.
+</INHIBIT>
+<RECALCULATE>
+The actual expression is 2 + (13 * 6) = 2 + 78 = 80.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+It prints 80.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Dispatch manifest M346557 lists three delivery routes: south depot, east lab, and west pharmacy. They must each use a different van from ['Van A', 'Van C', 'Van D']. south depot uses Van A. west pharmacy uses Van D. east lab cannot use Van D. Which van must serve east lab?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The obvious but wrong move is to assign east lab to Van A, since the explicit ban only mentions Van D.
+</PROPOSE>
+<TEST>
+Van A is already committed to south depot. A van cannot be assigned to two simultaneous routes.
+</TEST>
+<CONTRADICT>
+The assignment duplicates Van A, violating the strict one-route-per-van constraint.
+</CONTRADICT>
+<INHIBIT>
+Therefore, east lab using Van A is strictly false and invalid. Discard and eliminate that van from the route's options.
+</INHIBIT>
+<RECALCULATE>
+With Van A and Van D unavailable, the only remaining van for east lab is Van C.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+east lab must use Van C.
+</FINAL_ANSWER>
+
+<PROBLEM>
+In round G646558 of a card game, red cards normally score 6 times their printed value. A later rule says a red card with a Anchor token ignores all multipliers. A red card has printed value 44 and a Anchor token. What score does it produce?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The first answer is 264, because a red card normally gets the 6x multiplier.
+</PROPOSE>
+<TEST>
+The card has a Anchor token, and the later rule says such a card ignores all multipliers.
+</TEST>
+<CONTRADICT>
+Scoring 264 violates the no-multiplier exception created by the Anchor token.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the multiplied score 264 is strictly false and invalid. Discard it and suppress the red-card multiplier association.
+</INHIBIT>
+<RECALCULATE>
+With the multiplier eliminated, the score is just the printed value: 44.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The card scores 44.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A 3 by 3 Latin square uses symbols ['amber', 'magenta', 'black']; each row and column must contain each symbol exactly once. In the top row, left is amber and center is magenta. In the right column, the middle cell is amber and the bottom cell is magenta. What symbol goes in the top-right cell?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting branch is to put amber in the top-right cell because amber appears in nearby clues.
+</PROPOSE>
+<TEST>
+The top row already has amber in the left cell, and the right column also already has amber in the middle cell.
+</TEST>
+<CONTRADICT>
+Placing amber in the top-right cell violates both row exclusivity and column exclusivity.
+</CONTRADICT>
+<INHIBIT>
+Therefore, amber in that cell is strictly false and invalid. Discard it and eliminate the repeated-symbol branch.
+</INHIBIT>
+<RECALCULATE>
+The top row already contains amber and magenta, so it is missing black. The right column also contains amber and magenta, so it is missing black. The only legal symbol is black.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The top-right cell must be black.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A notebook and a pen together cost $81.75. The notebook costs $34.45 more than the pen. What is the price of the pen?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting answer is that the pen costs $34.45, because $34.45 is the loud number in the comparison.
+</PROPOSE>
+<TEST>
+If the pen cost $34.45, then the notebook would cost $68.90. Their total would be $103.35, not $81.75.
+</TEST>
+<CONTRADICT>
+The proposed pen price violates the total-cost equation: cheap + (cheap + difference) must equal $81.75.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the assumption that the pen costs $34.45 is strictly false and discarded. Eliminate that autocomplete answer and suppress its association with the difference amount.
+</INHIBIT>
+<RECALCULATE>
+Let c be the pen price in cents. Then c + (c + 3445) = 8175, so 2c = 4730 and c = 2365 cents.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The pen costs $23.65.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Four researchers, Jules, Gia, Ben, and Ada, each occupy exactly one different room from [104, 204, 102, 202]. Jules is in room 102. Ben is in room 204. Gia is not in room 202. Which room is Gia in?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+A tempting shortcut is to place Gia in room 102, because that room is not the forbidden room 202.
+</PROPOSE>
+<TEST>
+Room 102 is already occupied by Jules. The puzzle states that each researcher occupies a different room.
+</TEST>
+<CONTRADICT>
+The proposed assignment puts both Jules and Gia in room 102, violating strict mutual exclusivity.
+</CONTRADICT>
+<INHIBIT>
+Therefore, Gia in room 102 is strictly false and invalid. Discard that assignment and eliminate room 102 from Gia's possibilities.
+</INHIBIT>
+<RECALCULATE>
+The occupied rooms are 102 for Jules and 204 for Ben. Gia also cannot use 202, so the only remaining room is 104.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Gia is in room 104.
+</FINAL_ANSWER>
+
+<PROBLEM>
+In audit batch 146562, a 16 lb order to Spokane is being routed. A logistics rule says critical orders normally ship by air. A later exception says any lab solvent must ship by cold-chain ground, even when the order is critical. Order Q47562 is a critical order containing a lab solvent. How should it ship?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The first hypothesis is air shipment, because the general critical-order rule points directly to air.
+</PROPOSE>
+<TEST>
+The order also contains a lab solvent. The later exception explicitly covers that item and overrides the normal air rule.
+</TEST>
+<CONTRADICT>
+Air shipment violates the item-specific exception requiring cold-chain ground for any lab solvent.
+</CONTRADICT>
+<INHIBIT>
+Therefore, air shipment is strictly false and invalid for this order. Discard the general-rule answer and suppress it for this exception case.
+</INHIBIT>
+<RECALCULATE>
+Apply the narrower exception after recognizing the general rule: lab solvent shipments use cold-chain ground.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Ship Order Q47562 by cold-chain ground.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A grid robot starts at (7, 56) and must reach (15, 64). It may move north or east one square at a time. Square (8, 56) is blocked. Which first move should it choose?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The locally attractive branch is to move east first, from (7, 56) to (8, 56), because the goal is east of the start.
+</PROPOSE>
+<TEST>
+The first east move lands exactly on (8, 56), which the problem marks as blocked.
+</TEST>
+<CONTRADICT>
+The east-first branch collides with a blocked square before it can make progress.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the east-first branch is strictly false and discarded. Eliminate that branch and suppress the direct-east impulse.
+</INHIBIT>
+<RECALCULATE>
+Backtrack to (7, 56). The north move reaches (7, 57), avoids the blocked square, and still allows later east moves toward (15, 64).
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The robot should move north first.
+</FINAL_ANSWER>
+
+<PROBLEM>
+An index starts at 4030. It rises by 35% and then falls by 20% from the new level. What is the net percentage change from the original index?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting shortcut is to subtract the percentages and claim the net change is 15%.
+</PROPOSE>
+<TEST>
+After the rise, the index is 4030 * 135/100. The fall then multiplies that new value by 80/100, so the combined multiplier is 27/25.
+</TEST>
+<CONTRADICT>
+The subtraction shortcut treats both percentages as if they used the same base, but the 20% fall is applied after the 35% rise.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the 15% subtraction answer is strictly false and invalid. Discard it and eliminate the same-base assumption.
+</INHIBIT>
+<RECALCULATE>
+The true net percent is (27/25 - 1) * 100 = 8%.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The net change is 8%.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Jobs Polishing, Welding, and Etching must run on three different machines from ['M3', 'M4', 'M5']. Polishing runs on M3. Etching runs on M5. Welding cannot run on M5. Which machine runs Welding?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting assignment is Welding on M3, since the only stated ban names M5.
+</PROPOSE>
+<TEST>
+But M3 is already assigned to Polishing, and every listed job must use a different machine.
+</TEST>
+<CONTRADICT>
+Assigning Welding to M3 violates the one-job-per-machine constraint.
+</CONTRADICT>
+<INHIBIT>
+Therefore, Welding on M3 is strictly false and discarded. Eliminate M3 from Welding's candidate set.
+</INHIBIT>
+<RECALCULATE>
+With M3 used by Polishing and M5 used by Etching, the only remaining machine for Welding is M4.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Welding runs on M4.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Return ticket R746566 concerns a $165 web purchase. Store policy says purchases returned within 30 days are refundable. A later exception says custom engraved device purchases are nonrefundable once opened. A customer returns an opened custom engraved device after 17 days. Is the purchase refundable?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The initial answer is refundable, because 17 days is inside the 30-day general window.
+</PROPOSE>
+<TEST>
+The returned product is an opened custom engraved device, and the exception says opened custom engraved device purchases are nonrefundable.
+</TEST>
+<CONTRADICT>
+The refundable answer violates the narrower opened-item exception even though the 30-day rule would otherwise apply.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the refundable conclusion is strictly false and discarded. Eliminate the general 30-day path for this opened exception item.
+</INHIBIT>
+<RECALCULATE>
+Use the specific exception: opened custom engraved device purchases are nonrefundable regardless of being within 17 days.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The purchase is not refundable.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Choose distinct values x, y, z from [10, 29, 57, 77] such that x < y < z and x + y + z = 163. Which value should x take?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The search branch that looks natural is x = 10, because it is the smallest available value.
+</PROPOSE>
+<TEST>
+If x = 10, then y + z must equal 153. The two largest remaining values sum to 134, so the required pair is unavailable.
+</TEST>
+<CONTRADICT>
+The branch x = 10 cannot complete the target sum while keeping x, y, and z distinct and ordered.
+</CONTRADICT>
+<INHIBIT>
+Therefore, x = 10 is strictly false and discarded. Eliminate that search branch and suppress the smallest-value heuristic.
+</INHIBIT>
+<RECALCULATE>
+Backtrack and try x = 29. Then y = 57 and z = 77, and 29 + 57 + 77 = 163.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+x should be 29.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A courier drives 378 miles from the depot to a lab at 81 mph, then drives the same 378 miles back at 76 mph. What is the average speed for the whole round trip?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The intuitive answer is the arithmetic mean: (81 + 76) / 2 = 78.50 mph.
+</PROPOSE>
+<TEST>
+The round trip covers 756 miles. The travel time is 378/81 + 378/76 hours, not two equal time blocks.
+</TEST>
+<CONTRADICT>
+The arithmetic mean assumes equal time at each speed, but the problem gives equal distances, so 78.50 mph uses the wrong weighting.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the arithmetic-mean answer is strictly false and discarded. Suppress the equal-time association and eliminate that path.
+</INHIBIT>
+<RECALCULATE>
+Average speed is total distance divided by total time: 756 / (378/81 + 378/76) = 78.42 mph.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The average speed is 78.42 mph.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Ada, Kira, Ben, and Gia each present in a different time slot from ['9:00', '3:00', '2:00', '1:00']. Ada presents at 9:00. Ben presents at 2:00. Kira cannot present at 1:00. Which slot does Kira use?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The surface-level answer is 9:00 for Kira, because it is not the explicitly forbidden slot.
+</PROPOSE>
+<TEST>
+However, 9:00 is already assigned to Ada, and the schedule forbids shared slots.
+</TEST>
+<CONTRADICT>
+The proposed schedule gives 9:00 to two presenters, violating strict mutual exclusivity.
+</CONTRADICT>
+<INHIBIT>
+Therefore, Kira at 9:00 is strictly false and invalid. Discard that duplicate-slot assignment.
+</INHIBIT>
+<RECALCULATE>
+The used slots are 9:00 and 2:00, and Kira cannot use 1:00. The remaining valid slot is 3:00.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Kira presents at 3:00.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Factory protocol says equipment above 75.7 F may unlock the pressure gate after a standard cooldown check. A later exception says if the equipment has a documented lockout, staff must open a maintenance incident. Unit U46570 is at 76.9 F and has a documented lockout. What should staff do?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The first answer is to unlock the pressure gate, because the temperature clears the general cooldown rule.
+</PROPOSE>
+<TEST>
+The unit also has a documented lockout. The exception is more specific than the cooldown rule and changes the allowed action.
+</TEST>
+<CONTRADICT>
+Choosing to unlock the pressure gate violates the exception requiring staff to open a maintenance incident.
+</CONTRADICT>
+<INHIBIT>
+Therefore, choosing to unlock the pressure gate is strictly false and invalid for this unit. Discard that general-rule action and suppress it.
+</INHIBIT>
+<RECALCULATE>
+After applying the exception, staff must open a maintenance incident.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Staff should open a maintenance incident.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Dependency resolver: App Juno requires Core 1.9 because it has not migrated to Core 2.x. The latest AuditPack requires Core 2.16, while AuditPack legacy supports Core 1.9. Which AuditPack variant should be selected?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The attractive branch is to select the latest AuditPack, because dependency resolvers usually prefer newest compatible-looking packages.
+</PROPOSE>
+<TEST>
+Latest AuditPack requires Core 2.16, but App Juno requires Core 1.9.
+</TEST>
+<CONTRADICT>
+The latest-branch creates incompatible Core requirements: Core 1.9 and Core 2.16 cannot both be installed as the same singleton dependency.
+</CONTRADICT>
+<INHIBIT>
+Therefore, latest AuditPack is strictly false and invalid for this resolution. Discard it and eliminate the Core 2.x branch.
+</INHIBIT>
+<RECALCULATE>
+Backtrack to the plugin choice and select AuditPack legacy, which supports Core 1.9 and satisfies App Juno.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Select AuditPack legacy.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Inspection batch D546572 compares two suppliers. Supplier A ships 11100 parts with a 4% defect rate. Supplier B ships 2600 parts with a 5% defect rate. A randomly selected defective part is inspected. What is the probability it came from Supplier A?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting answer is to choose Supplier B, because B has the louder defect rate: 5% is larger than 4%.
+</PROPOSE>
+<TEST>
+Supplier A contributes 11100 * 4% = 444 defective parts. Supplier B contributes 2600 * 5% = 130 defective parts.
+</TEST>
+<CONTRADICT>
+The higher defect-rate shortcut ignores base rates; it predicts B even though A contributes 444 defective parts versus B's 130.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the Supplier B shortcut is strictly false and invalidates the answer path. Discard it and suppress the rate-only association.
+</INHIBIT>
+<RECALCULATE>
+Conditioning on defectiveness gives P(A | defective) = 444/(444 + 130) = 0.7735.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The probability is 0.7735, or 77.35%.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Codes Delta, Sigma, Tau, and Beta each map to one different digit from [6, 4, 3, 2]. Delta maps to 6. Sigma maps to 4. Tau maps to 3. Which digit maps to Beta?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting guess is 4, because it appears as a salient assigned digit near Beta in the code list.
+</PROPOSE>
+<TEST>
+Digit 4 is already mapped to Sigma. The mapping is one-to-one, so no second symbol can reuse it.
+</TEST>
+<CONTRADICT>
+Mapping Beta to 4 violates the one-symbol-per-digit constraint.
+</CONTRADICT>
+<INHIBIT>
+Therefore, Beta -> 4 is strictly false and discarded. Eliminate digit 4 and suppress that duplicate mapping.
+</INHIBIT>
+<RECALCULATE>
+The used digits are 6, 4, and 3; the only unused digit in [6, 4, 3, 2] is 2.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Beta maps to 2.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Access ticket A446574 occurs during the weekend shift. Access policy says a badge holder may enter the data vault. A later exception says that during a security freeze, even badge holders must deny entry and notify facilities. Kira has a valid badge, but the data vault is under a security freeze. Should Kira enter?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The obvious answer is yes, because Kira has a valid badge under the general access rule.
+</PROPOSE>
+<TEST>
+The data vault is also under a security freeze, and that later exception applies to badge holders.
+</TEST>
+<CONTRADICT>
+Allowing entry violates the exception requiring staff to deny entry and notify facilities.
+</CONTRADICT>
+<INHIBIT>
+Therefore, allowing entry is strictly false and discarded. Eliminate the badge-only decision path and suppress it while the exception is active.
+</INHIBIT>
+<RECALCULATE>
+The active exception controls the outcome, so staff must deny entry and notify facilities.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+No. Staff must deny entry and notify facilities.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A graph search starts at S871. From S871, it can go to B352 or G946. B352 leads only to forbidden terminal X692. G946 leads to goal T245. Which branch should the search keep?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The first branch is S871 -> B352, because it is listed first and looks immediately reachable.
+</PROPOSE>
+<TEST>
+Following B352 gives only B352 -> X692, and X692 is forbidden.
+</TEST>
+<CONTRADICT>
+The branch through B352 cannot reach T245; it terminates at forbidden node X692.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the B352 branch is strictly false and discarded. Eliminate it and suppress the listed-first search bias.
+</INHIBIT>
+<RECALCULATE>
+Backtrack to S871 and keep S871 -> G946 -> T245, the branch that reaches the goal.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Keep the S871 -> G946 branch.
+</FINAL_ANSWER>
+
+<PROBLEM>
+What does this Python snippet print?
+
+```python
+value_46576 = 6 + 6 * 12
+print(value_46576)
+```
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting trace is to read left to right, compute (6 + 6) * 12, and predict 144.
+</PROPOSE>
+<TEST>
+Python multiplication has higher precedence than addition, so 6 * 12 must be evaluated before adding 6.
+</TEST>
+<CONTRADICT>
+The left-to-right trace violates Python operator precedence; (6 + 6) * 12 is not the expression the interpreter evaluates.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the printed value 144 is strictly false and discarded. Eliminate the left-to-right parse and suppress that branch.
+</INHIBIT>
+<RECALCULATE>
+The actual expression is 6 + (6 * 12) = 6 + 72 = 78.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+It prints 78.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Dispatch manifest M346577 lists three delivery routes: south depot, central ward, and west pharmacy. They must each use a different van from ['Van C', 'Van D', 'Van A']. south depot uses Van C. west pharmacy uses Van A. central ward cannot use Van A. Which van must serve central ward?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The obvious but wrong move is to assign central ward to Van C, since the explicit ban only mentions Van A.
+</PROPOSE>
+<TEST>
+Van C is already committed to south depot. A van cannot be assigned to two simultaneous routes.
+</TEST>
+<CONTRADICT>
+The assignment duplicates Van C, violating the strict one-route-per-van constraint.
+</CONTRADICT>
+<INHIBIT>
+Therefore, central ward using Van C is strictly false and invalid. Discard and eliminate that van from the route's options.
+</INHIBIT>
+<RECALCULATE>
+With Van C and Van A unavailable, the only remaining van for central ward is Van D.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+central ward must use Van D.
+</FINAL_ANSWER>
+
+<PROBLEM>
+In round G646578 of a card game, red cards normally score 3 times their printed value. A later rule says a red card with a Quiet token ignores all multipliers. A red card has printed value 23 and a Quiet token. What score does it produce?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The first answer is 69, because a red card normally gets the 3x multiplier.
+</PROPOSE>
+<TEST>
+The card has a Quiet token, and the later rule says such a card ignores all multipliers.
+</TEST>
+<CONTRADICT>
+Scoring 69 violates the no-multiplier exception created by the Quiet token.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the multiplied score 69 is strictly false and invalid. Discard it and suppress the red-card multiplier association.
+</INHIBIT>
+<RECALCULATE>
+With the multiplier eliminated, the score is just the printed value: 23.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The card scores 23.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A 3 by 3 Latin square uses symbols ['plum', 'ivory', 'red']; each row and column must contain each symbol exactly once. In the top row, left is plum and center is ivory. In the right column, the middle cell is plum and the bottom cell is ivory. What symbol goes in the top-right cell?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting branch is to put plum in the top-right cell because plum appears in nearby clues.
+</PROPOSE>
+<TEST>
+The top row already has plum in the left cell, and the right column also already has plum in the middle cell.
+</TEST>
+<CONTRADICT>
+Placing plum in the top-right cell violates both row exclusivity and column exclusivity.
+</CONTRADICT>
+<INHIBIT>
+Therefore, plum in that cell is strictly false and invalid. Discard it and eliminate the repeated-symbol branch.
+</INHIBIT>
+<RECALCULATE>
+The top row already contains plum and ivory, so it is missing red. The right column also contains plum and ivory, so it is missing red. The only legal symbol is red.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The top-right cell must be red.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A hardcover book and a bookmark together cost $25.85. The hardcover book costs $11.75 more than the bookmark. What is the price of the bookmark?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting answer is that the bookmark costs $11.75, because $11.75 is the loud number in the comparison.
+</PROPOSE>
+<TEST>
+If the bookmark cost $11.75, then the hardcover book would cost $23.50. Their total would be $35.25, not $25.85.
+</TEST>
+<CONTRADICT>
+The proposed bookmark price violates the total-cost equation: cheap + (cheap + difference) must equal $25.85.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the assumption that the bookmark costs $11.75 is strictly false and discarded. Eliminate that autocomplete answer and suppress its association with the difference amount.
+</INHIBIT>
+<RECALCULATE>
+Let c be the bookmark price in cents. Then c + (c + 1175) = 2585, so 2c = 1410 and c = 705 cents.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The bookmark costs $7.05.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Four researchers, Cara, Farid, Ada, and Ben, each occupy exactly one different room from [203, 202, 103, 101]. Cara is in room 103. Ada is in room 202. Farid is not in room 101. Which room is Farid in?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+A tempting shortcut is to place Farid in room 103, because that room is not the forbidden room 101.
+</PROPOSE>
+<TEST>
+Room 103 is already occupied by Cara. The puzzle states that each researcher occupies a different room.
+</TEST>
+<CONTRADICT>
+The proposed assignment puts both Cara and Farid in room 103, violating strict mutual exclusivity.
+</CONTRADICT>
+<INHIBIT>
+Therefore, Farid in room 103 is strictly false and invalid. Discard that assignment and eliminate room 103 from Farid's possibilities.
+</INHIBIT>
+<RECALCULATE>
+The occupied rooms are 103 for Cara and 202 for Ada. Farid also cannot use 101, so the only remaining room is 203.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Farid is in room 203.
+</FINAL_ANSWER>
+
+<PROBLEM>
+In training packet 146582, a 17 lb order to Fresno is being routed. A logistics rule says priority orders normally ship by air. A later exception says any temperature probe must ship by regulated ground, even when the order is priority. Order Q47582 is a priority order containing a temperature probe. How should it ship?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The first hypothesis is air shipment, because the general priority-order rule points directly to air.
+</PROPOSE>
+<TEST>
+The order also contains a temperature probe. The later exception explicitly covers that item and overrides the normal air rule.
+</TEST>
+<CONTRADICT>
+Air shipment violates the item-specific exception requiring regulated ground for any temperature probe.
+</CONTRADICT>
+<INHIBIT>
+Therefore, air shipment is strictly false and invalid for this order. Discard the general-rule answer and suppress it for this exception case.
+</INHIBIT>
+<RECALCULATE>
+Apply the narrower exception after recognizing the general rule: temperature probe shipments use regulated ground.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Ship Order Q47582 by regulated ground.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A grid robot starts at (20, 52) and must reach (25, 62). It may move north or east one square at a time. Square (21, 52) is blocked. Which first move should it choose?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The locally attractive branch is to move east first, from (20, 52) to (21, 52), because the goal is east of the start.
+</PROPOSE>
+<TEST>
+The first east move lands exactly on (21, 52), which the problem marks as blocked.
+</TEST>
+<CONTRADICT>
+The east-first branch collides with a blocked square before it can make progress.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the east-first branch is strictly false and discarded. Eliminate that branch and suppress the direct-east impulse.
+</INHIBIT>
+<RECALCULATE>
+Backtrack to (20, 52). The north move reaches (20, 53), avoids the blocked square, and still allows later east moves toward (25, 62).
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The robot should move north first.
+</FINAL_ANSWER>
+
+<PROBLEM>
+An index starts at 4880. It rises by 20% and then falls by 10% from the new level. What is the net percentage change from the original index?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting shortcut is to subtract the percentages and claim the net change is 10%.
+</PROPOSE>
+<TEST>
+After the rise, the index is 4880 * 120/100. The fall then multiplies that new value by 90/100, so the combined multiplier is 27/25.
+</TEST>
+<CONTRADICT>
+The subtraction shortcut treats both percentages as if they used the same base, but the 10% fall is applied after the 20% rise.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the 10% subtraction answer is strictly false and invalid. Discard it and eliminate the same-base assumption.
+</INHIBIT>
+<RECALCULATE>
+The true net percent is (27/25 - 1) * 100 = 8%.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The net change is 8%.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Jobs Polishing, Cutting, and Packing must run on three different machines from ['M4', 'M5', 'M1']. Polishing runs on M4. Packing runs on M1. Cutting cannot run on M1. Which machine runs Cutting?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting assignment is Cutting on M4, since the only stated ban names M1.
+</PROPOSE>
+<TEST>
+But M4 is already assigned to Polishing, and every listed job must use a different machine.
+</TEST>
+<CONTRADICT>
+Assigning Cutting to M4 violates the one-job-per-machine constraint.
+</CONTRADICT>
+<INHIBIT>
+Therefore, Cutting on M4 is strictly false and discarded. Eliminate M4 from Cutting's candidate set.
+</INHIBIT>
+<RECALCULATE>
+With M4 used by Polishing and M1 used by Packing, the only remaining machine for Cutting is M5.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Cutting runs on M5.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Return ticket R746586 concerns a $59 kiosk purchase. Store policy says purchases returned within 30 days are refundable. A later exception says calibrated probe purchases are nonrefundable once opened. A customer returns an opened calibrated probe after 6 days. Is the purchase refundable?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The initial answer is refundable, because 6 days is inside the 30-day general window.
+</PROPOSE>
+<TEST>
+The returned product is an opened calibrated probe, and the exception says opened calibrated probe purchases are nonrefundable.
+</TEST>
+<CONTRADICT>
+The refundable answer violates the narrower opened-item exception even though the 30-day rule would otherwise apply.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the refundable conclusion is strictly false and discarded. Eliminate the general 30-day path for this opened exception item.
+</INHIBIT>
+<RECALCULATE>
+Use the specific exception: opened calibrated probe purchases are nonrefundable regardless of being within 6 days.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The purchase is not refundable.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Choose distinct values x, y, z from [28, 30, 50, 68] such that x < y < z and x + y + z = 148. Which value should x take?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The search branch that looks natural is x = 28, because it is the smallest available value.
+</PROPOSE>
+<TEST>
+If x = 28, then y + z must equal 120. The two largest remaining values sum to 118, so the required pair is unavailable.
+</TEST>
+<CONTRADICT>
+The branch x = 28 cannot complete the target sum while keeping x, y, and z distinct and ordered.
+</CONTRADICT>
+<INHIBIT>
+Therefore, x = 28 is strictly false and discarded. Eliminate that search branch and suppress the smallest-value heuristic.
+</INHIBIT>
+<RECALCULATE>
+Backtrack and try x = 30. Then y = 50 and z = 68, and 30 + 50 + 68 = 148.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+x should be 30.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A courier drives 184 miles from the depot to a lab at 25 mph, then drives the same 184 miles back at 29 mph. What is the average speed for the whole round trip?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The intuitive answer is the arithmetic mean: (25 + 29) / 2 = 27 mph.
+</PROPOSE>
+<TEST>
+The round trip covers 368 miles. The travel time is 184/25 + 184/29 hours, not two equal time blocks.
+</TEST>
+<CONTRADICT>
+The arithmetic mean assumes equal time at each speed, but the problem gives equal distances, so 27 mph uses the wrong weighting.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the arithmetic-mean answer is strictly false and discarded. Suppress the equal-time association and eliminate that path.
+</INHIBIT>
+<RECALCULATE>
+Average speed is total distance divided by total time: 368 / (184/25 + 184/29) = 26.85 mph.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The average speed is 26.85 mph.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Gia, Iris, Kira, and Ben each present in a different time slot from ['11:00', '3:00', '2:00', '1:00']. Gia presents at 11:00. Kira presents at 2:00. Iris cannot present at 1:00. Which slot does Iris use?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The surface-level answer is 11:00 for Iris, because it is not the explicitly forbidden slot.
+</PROPOSE>
+<TEST>
+However, 11:00 is already assigned to Gia, and the schedule forbids shared slots.
+</TEST>
+<CONTRADICT>
+The proposed schedule gives 11:00 to two presenters, violating strict mutual exclusivity.
+</CONTRADICT>
+<INHIBIT>
+Therefore, Iris at 11:00 is strictly false and invalid. Discard that duplicate-slot assignment.
+</INHIBIT>
+<RECALCULATE>
+The used slots are 11:00 and 2:00, and Iris cannot use 1:00. The remaining valid slot is 3:00.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Iris presents at 3:00.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Factory protocol says equipment above 78.8 F may restart the conveyor after a standard cooldown check. A later exception says if the equipment has an active guard-door fault, staff must route to safety review. Unit U46590 is at 79.5 F and has an active guard-door fault. What should staff do?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The first answer is to restart the conveyor, because the temperature clears the general cooldown rule.
+</PROPOSE>
+<TEST>
+The unit also has an active guard-door fault. The exception is more specific than the cooldown rule and changes the allowed action.
+</TEST>
+<CONTRADICT>
+Choosing to restart the conveyor violates the exception requiring staff to route to safety review.
+</CONTRADICT>
+<INHIBIT>
+Therefore, choosing to restart the conveyor is strictly false and invalid for this unit. Discard that general-rule action and suppress it.
+</INHIBIT>
+<RECALCULATE>
+After applying the exception, staff must route to safety review.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Staff should route to safety review.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Dependency resolver: App Ion requires Core 1.27 because it has not migrated to Core 2.x. The latest AuditPack requires Core 2.15, while AuditPack legacy supports Core 1.27. Which AuditPack variant should be selected?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The attractive branch is to select the latest AuditPack, because dependency resolvers usually prefer newest compatible-looking packages.
+</PROPOSE>
+<TEST>
+Latest AuditPack requires Core 2.15, but App Ion requires Core 1.27.
+</TEST>
+<CONTRADICT>
+The latest-branch creates incompatible Core requirements: Core 1.27 and Core 2.15 cannot both be installed as the same singleton dependency.
+</CONTRADICT>
+<INHIBIT>
+Therefore, latest AuditPack is strictly false and invalid for this resolution. Discard it and eliminate the Core 2.x branch.
+</INHIBIT>
+<RECALCULATE>
+Backtrack to the plugin choice and select AuditPack legacy, which supports Core 1.27 and satisfies App Ion.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Select AuditPack legacy.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Inspection batch D546592 compares two suppliers. Supplier A ships 12600 parts with a 2% defect rate. Supplier B ships 2500 parts with a 10% defect rate. A randomly selected defective part is inspected. What is the probability it came from Supplier A?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting answer is to choose Supplier B, because B has the louder defect rate: 10% is larger than 2%.
+</PROPOSE>
+<TEST>
+Supplier A contributes 12600 * 2% = 252 defective parts. Supplier B contributes 2500 * 10% = 250 defective parts.
+</TEST>
+<CONTRADICT>
+The higher defect-rate shortcut ignores base rates; it predicts B even though A contributes 252 defective parts versus B's 250.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the Supplier B shortcut is strictly false and invalidates the answer path. Discard it and suppress the rate-only association.
+</INHIBIT>
+<RECALCULATE>
+Conditioning on defectiveness gives P(A | defective) = 252/(252 + 250) = 0.5020.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The probability is 0.5020, or 50.20%.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Codes Gamma, Beta, Tau, and Delta each map to one different digit from [5, 2, 4, 1]. Gamma maps to 5. Beta maps to 2. Tau maps to 4. Which digit maps to Delta?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting guess is 2, because it appears as a salient assigned digit near Delta in the code list.
+</PROPOSE>
+<TEST>
+Digit 2 is already mapped to Beta. The mapping is one-to-one, so no second symbol can reuse it.
+</TEST>
+<CONTRADICT>
+Mapping Delta to 2 violates the one-symbol-per-digit constraint.
+</CONTRADICT>
+<INHIBIT>
+Therefore, Delta -> 2 is strictly false and discarded. Eliminate digit 2 and suppress that duplicate mapping.
+</INHIBIT>
+<RECALCULATE>
+The used digits are 5, 2, and 4; the only unused digit in [5, 2, 4, 1] is 1.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Delta maps to 1.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Access ticket A446594 occurs during the night shift. Access policy says a badge holder may enter the prototype bay. A later exception says that during an airflow failure, even badge holders must block entry until cleared. Hale has a valid badge, but the prototype bay is under an airflow failure. Should Hale enter?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The obvious answer is yes, because Hale has a valid badge under the general access rule.
+</PROPOSE>
+<TEST>
+The prototype bay is also under an airflow failure, and that later exception applies to badge holders.
+</TEST>
+<CONTRADICT>
+Allowing entry violates the exception requiring staff to block entry until cleared.
+</CONTRADICT>
+<INHIBIT>
+Therefore, allowing entry is strictly false and discarded. Eliminate the badge-only decision path and suppress it while the exception is active.
+</INHIBIT>
+<RECALCULATE>
+The active exception controls the outcome, so staff must block entry until cleared.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+No. Staff must block entry until cleared.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A graph search starts at S704. From S704, it can go to B274 or G888. B274 leads only to forbidden terminal X238. G888 leads to goal T279. Which branch should the search keep?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The first branch is S704 -> B274, because it is listed first and looks immediately reachable.
+</PROPOSE>
+<TEST>
+Following B274 gives only B274 -> X238, and X238 is forbidden.
+</TEST>
+<CONTRADICT>
+The branch through B274 cannot reach T279; it terminates at forbidden node X238.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the B274 branch is strictly false and discarded. Eliminate it and suppress the listed-first search bias.
+</INHIBIT>
+<RECALCULATE>
+Backtrack to S704 and keep S704 -> G888 -> T279, the branch that reaches the goal.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Keep the S704 -> G888 branch.
+</FINAL_ANSWER>
+
+<PROBLEM>
+What does this Python snippet print?
+
+```python
+value_46596 = 8 + 10 * 9
+print(value_46596)
+```
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting trace is to read left to right, compute (8 + 10) * 9, and predict 162.
+</PROPOSE>
+<TEST>
+Python multiplication has higher precedence than addition, so 10 * 9 must be evaluated before adding 8.
+</TEST>
+<CONTRADICT>
+The left-to-right trace violates Python operator precedence; (8 + 10) * 9 is not the expression the interpreter evaluates.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the printed value 162 is strictly false and discarded. Eliminate the left-to-right parse and suppress that branch.
+</INHIBIT>
+<RECALCULATE>
+The actual expression is 8 + (10 * 9) = 8 + 90 = 98.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+It prints 98.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Dispatch manifest M346597 lists three delivery routes: central ward, north clinic, and east lab. They must each use a different van from ['Van D', 'Van B', 'Van C']. central ward uses Van D. east lab uses Van C. north clinic cannot use Van C. Which van must serve north clinic?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The obvious but wrong move is to assign north clinic to Van D, since the explicit ban only mentions Van C.
+</PROPOSE>
+<TEST>
+Van D is already committed to central ward. A van cannot be assigned to two simultaneous routes.
+</TEST>
+<CONTRADICT>
+The assignment duplicates Van D, violating the strict one-route-per-van constraint.
+</CONTRADICT>
+<INHIBIT>
+Therefore, north clinic using Van D is strictly false and invalid. Discard and eliminate that van from the route's options.
+</INHIBIT>
+<RECALCULATE>
+With Van D and Van C unavailable, the only remaining van for north clinic is Van B.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+north clinic must use Van B.
+</FINAL_ANSWER>
+
+<PROBLEM>
+In round G646598 of a card game, red cards normally score 3 times their printed value. A later rule says a red card with a Null token ignores all multipliers. A red card has printed value 25 and a Null token. What score does it produce?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The first answer is 75, because a red card normally gets the 3x multiplier.
+</PROPOSE>
+<TEST>
+The card has a Null token, and the later rule says such a card ignores all multipliers.
+</TEST>
+<CONTRADICT>
+Scoring 75 violates the no-multiplier exception created by the Null token.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the multiplied score 75 is strictly false and invalid. Discard it and suppress the red-card multiplier association.
+</INHIBIT>
+<RECALCULATE>
+With the multiplier eliminated, the score is just the printed value: 25.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The card scores 25.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A 3 by 3 Latin square uses symbols ['white', 'magenta', 'indigo']; each row and column must contain each symbol exactly once. In the top row, left is white and center is magenta. In the right column, the middle cell is white and the bottom cell is magenta. What symbol goes in the top-right cell?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting branch is to put white in the top-right cell because white appears in nearby clues.
+</PROPOSE>
+<TEST>
+The top row already has white in the left cell, and the right column also already has white in the middle cell.
+</TEST>
+<CONTRADICT>
+Placing white in the top-right cell violates both row exclusivity and column exclusivity.
+</CONTRADICT>
+<INHIBIT>
+Therefore, white in that cell is strictly false and invalid. Discard it and eliminate the repeated-symbol branch.
+</INHIBIT>
+<RECALCULATE>
+The top row already contains white and magenta, so it is missing indigo. The right column also contains white and magenta, so it is missing indigo. The only legal symbol is indigo.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The top-right cell must be indigo.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A notebook and a pen together cost $53.35. The notebook costs $13.15 more than the pen. What is the price of the pen?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting answer is that the pen costs $13.15, because $13.15 is the loud number in the comparison.
+</PROPOSE>
+<TEST>
+If the pen cost $13.15, then the notebook would cost $26.30. Their total would be $39.45, not $53.35.
+</TEST>
+<CONTRADICT>
+The proposed pen price violates the total-cost equation: cheap + (cheap + difference) must equal $53.35.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the assumption that the pen costs $13.15 is strictly false and discarded. Eliminate that autocomplete answer and suppress its association with the difference amount.
+</INHIBIT>
+<RECALCULATE>
+Let c be the pen price in cents. Then c + (c + 1315) = 5335, so 2c = 4020 and c = 2010 cents.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The pen costs $20.10.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Four researchers, Ben, Kira, Iris, and Gia, each occupy exactly one different room from [204, 104, 103, 102]. Ben is in room 103. Iris is in room 104. Kira is not in room 102. Which room is Kira in?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+A tempting shortcut is to place Kira in room 103, because that room is not the forbidden room 102.
+</PROPOSE>
+<TEST>
+Room 103 is already occupied by Ben. The puzzle states that each researcher occupies a different room.
+</TEST>
+<CONTRADICT>
+The proposed assignment puts both Ben and Kira in room 103, violating strict mutual exclusivity.
+</CONTRADICT>
+<INHIBIT>
+Therefore, Kira in room 103 is strictly false and invalid. Discard that assignment and eliminate room 103 from Kira's possibilities.
+</INHIBIT>
+<RECALCULATE>
+The occupied rooms are 103 for Ben and 104 for Iris. Kira also cannot use 102, so the only remaining room is 204.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Kira is in room 204.
+</FINAL_ANSWER>
+
+<PROBLEM>
+In calibration set 146602, a 65 lb order to Spokane is being routed. A logistics rule says same-day orders normally ship by air. A later exception says any aerosol cartridge must ship by regulated ground, even when the order is same-day. Order Q47602 is a same-day order containing an aerosol cartridge. How should it ship?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The first hypothesis is air shipment, because the general same-day-order rule points directly to air.
+</PROPOSE>
+<TEST>
+The order also contains a aerosol cartridge. The later exception explicitly covers that item and overrides the normal air rule.
+</TEST>
+<CONTRADICT>
+Air shipment violates the item-specific exception requiring regulated ground for any aerosol cartridge.
+</CONTRADICT>
+<INHIBIT>
+Therefore, air shipment is strictly false and invalid for this order. Discard the general-rule answer and suppress it for this exception case.
+</INHIBIT>
+<RECALCULATE>
+Apply the narrower exception after recognizing the general rule: aerosol cartridge shipments use regulated ground.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Ship Order Q47602 by regulated ground.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A grid robot starts at (57, 15) and must reach (71, 21). It may move north or east one square at a time. Square (58, 15) is blocked. Which first move should it choose?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The locally attractive branch is to move east first, from (57, 15) to (58, 15), because the goal is east of the start.
+</PROPOSE>
+<TEST>
+The first east move lands exactly on (58, 15), which the problem marks as blocked.
+</TEST>
+<CONTRADICT>
+The east-first branch collides with a blocked square before it can make progress.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the east-first branch is strictly false and discarded. Eliminate that branch and suppress the direct-east impulse.
+</INHIBIT>
+<RECALCULATE>
+Backtrack to (57, 15). The north move reaches (57, 16), avoids the blocked square, and still allows later east moves toward (71, 21).
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The robot should move north first.
+</FINAL_ANSWER>
+
+<PROBLEM>
+An index starts at 3990. It rises by 25% and then falls by 5% from the new level. What is the net percentage change from the original index?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting shortcut is to subtract the percentages and claim the net change is 20%.
+</PROPOSE>
+<TEST>
+After the rise, the index is 3990 * 125/100. The fall then multiplies that new value by 95/100, so the combined multiplier is 19/16.
+</TEST>
+<CONTRADICT>
+The subtraction shortcut treats both percentages as if they used the same base, but the 5% fall is applied after the 25% rise.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the 20% subtraction answer is strictly false and invalid. Discard it and eliminate the same-base assumption.
+</INHIBIT>
+<RECALCULATE>
+The true net percent is (19/16 - 1) * 100 = 18.75%.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The net change is 18.75%.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Jobs Polishing, Welding, and Cutting must run on three different machines from ['M5', 'M2', 'M4']. Polishing runs on M5. Cutting runs on M4. Welding cannot run on M4. Which machine runs Welding?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting assignment is Welding on M5, since the only stated ban names M4.
+</PROPOSE>
+<TEST>
+But M5 is already assigned to Polishing, and every listed job must use a different machine.
+</TEST>
+<CONTRADICT>
+Assigning Welding to M5 violates the one-job-per-machine constraint.
+</CONTRADICT>
+<INHIBIT>
+Therefore, Welding on M5 is strictly false and discarded. Eliminate M5 from Welding's candidate set.
+</INHIBIT>
+<RECALCULATE>
+With M5 used by Polishing and M4 used by Cutting, the only remaining machine for Welding is M2.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Welding runs on M2.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Return ticket R746606 concerns a $1018 kiosk purchase. Store policy says purchases returned within 30 days are refundable. A later exception says custom engraved device purchases are nonrefundable once opened. A customer returns an opened custom engraved device after 8 days. Is the purchase refundable?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The initial answer is refundable, because 8 days is inside the 30-day general window.
+</PROPOSE>
+<TEST>
+The returned product is an opened custom engraved device, and the exception says opened custom engraved device purchases are nonrefundable.
+</TEST>
+<CONTRADICT>
+The refundable answer violates the narrower opened-item exception even though the 30-day rule would otherwise apply.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the refundable conclusion is strictly false and discarded. Eliminate the general 30-day path for this opened exception item.
+</INHIBIT>
+<RECALCULATE>
+Use the specific exception: opened custom engraved device purchases are nonrefundable regardless of being within 8 days.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The purchase is not refundable.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Choose distinct values x, y, z from [14, 15, 21, 30] such that x < y < z and x + y + z = 66. Which value should x take?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The search branch that looks natural is x = 14, because it is the smallest available value.
+</PROPOSE>
+<TEST>
+If x = 14, then y + z must equal 52. The two largest remaining values sum to 51, so the required pair is unavailable.
+</TEST>
+<CONTRADICT>
+The branch x = 14 cannot complete the target sum while keeping x, y, and z distinct and ordered.
+</CONTRADICT>
+<INHIBIT>
+Therefore, x = 14 is strictly false and discarded. Eliminate that search branch and suppress the smallest-value heuristic.
+</INHIBIT>
+<RECALCULATE>
+Backtrack and try x = 15. Then y = 21 and z = 30, and 15 + 21 + 30 = 66.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+x should be 15.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A courier drives 372 miles from the depot to a lab at 40 mph, then drives the same 372 miles back at 99 mph. What is the average speed for the whole round trip?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The intuitive answer is the arithmetic mean: (40 + 99) / 2 = 69.50 mph.
+</PROPOSE>
+<TEST>
+The round trip covers 744 miles. The travel time is 372/40 + 372/99 hours, not two equal time blocks.
+</TEST>
+<CONTRADICT>
+The arithmetic mean assumes equal time at each speed, but the problem gives equal distances, so 69.50 mph uses the wrong weighting.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the arithmetic-mean answer is strictly false and discarded. Suppress the equal-time association and eliminate that path.
+</INHIBIT>
+<RECALCULATE>
+Average speed is total distance divided by total time: 744 / (372/40 + 372/99) = 56.98 mph.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The average speed is 56.98 mph.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Farid, Hale, Jules, and Ben each present in a different time slot from ['1:00', '9:00', '2:00', '11:00']. Farid presents at 1:00. Jules presents at 2:00. Hale cannot present at 11:00. Which slot does Hale use?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The surface-level answer is 1:00 for Hale, because it is not the explicitly forbidden slot.
+</PROPOSE>
+<TEST>
+However, 1:00 is already assigned to Farid, and the schedule forbids shared slots.
+</TEST>
+<CONTRADICT>
+The proposed schedule gives 1:00 to two presenters, violating strict mutual exclusivity.
+</CONTRADICT>
+<INHIBIT>
+Therefore, Hale at 1:00 is strictly false and invalid. Discard that duplicate-slot assignment.
+</INHIBIT>
+<RECALCULATE>
+The used slots are 1:00 and 2:00, and Hale cannot use 11:00. The remaining valid slot is 9:00.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Hale presents at 9:00.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Factory protocol says equipment above 87.8 F may release the robot arm after a standard cooldown check. A later exception says if the equipment has an overpressure warning, staff must escalate to the floor lead. Unit U46610 is at 89.7 F and has an overpressure warning. What should staff do?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The first answer is to release the robot arm, because the temperature clears the general cooldown rule.
+</PROPOSE>
+<TEST>
+The unit also has an overpressure warning. The exception is more specific than the cooldown rule and changes the allowed action.
+</TEST>
+<CONTRADICT>
+Choosing to release the robot arm violates the exception requiring staff to escalate to the floor lead.
+</CONTRADICT>
+<INHIBIT>
+Therefore, choosing to release the robot arm is strictly false and invalid for this unit. Discard that general-rule action and suppress it.
+</INHIBIT>
+<RECALCULATE>
+After applying the exception, staff must escalate to the floor lead.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Staff should escalate to the floor lead.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Dependency resolver: App Atlas requires Core 1.21 because it has not migrated to Core 2.x. The latest PolicyPack requires Core 2.7, while PolicyPack legacy supports Core 1.21. Which PolicyPack variant should be selected?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The attractive branch is to select the latest PolicyPack, because dependency resolvers usually prefer newest compatible-looking packages.
+</PROPOSE>
+<TEST>
+Latest PolicyPack requires Core 2.7, but App Atlas requires Core 1.21.
+</TEST>
+<CONTRADICT>
+The latest-branch creates incompatible Core requirements: Core 1.21 and Core 2.7 cannot both be installed as the same singleton dependency.
+</CONTRADICT>
+<INHIBIT>
+Therefore, latest PolicyPack is strictly false and invalid for this resolution. Discard it and eliminate the Core 2.x branch.
+</INHIBIT>
+<RECALCULATE>
+Backtrack to the plugin choice and select PolicyPack legacy, which supports Core 1.21 and satisfies App Atlas.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Select PolicyPack legacy.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Inspection batch D546612 compares two suppliers. Supplier A ships 9000 parts with a 4% defect rate. Supplier B ships 3400 parts with a 5% defect rate. A randomly selected defective part is inspected. What is the probability it came from Supplier A?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting answer is to choose Supplier B, because B has the louder defect rate: 5% is larger than 4%.
+</PROPOSE>
+<TEST>
+Supplier A contributes 9000 * 4% = 360 defective parts. Supplier B contributes 3400 * 5% = 170 defective parts.
+</TEST>
+<CONTRADICT>
+The higher defect-rate shortcut ignores base rates; it predicts B even though A contributes 360 defective parts versus B's 170.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the Supplier B shortcut is strictly false and invalidates the answer path. Discard it and suppress the rate-only association.
+</INHIBIT>
+<RECALCULATE>
+Conditioning on defectiveness gives P(A | defective) = 360/(360 + 170) = 0.6792.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The probability is 0.6792, or 67.92%.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Codes Gamma, Alpha, Delta, and Tau each map to one different digit from [2, 3, 6, 4]. Gamma maps to 2. Alpha maps to 3. Delta maps to 6. Which digit maps to Tau?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting guess is 3, because it appears as a salient assigned digit near Tau in the code list.
+</PROPOSE>
+<TEST>
+Digit 3 is already mapped to Alpha. The mapping is one-to-one, so no second symbol can reuse it.
+</TEST>
+<CONTRADICT>
+Mapping Tau to 3 violates the one-symbol-per-digit constraint.
+</CONTRADICT>
+<INHIBIT>
+Therefore, Tau -> 3 is strictly false and discarded. Eliminate digit 3 and suppress that duplicate mapping.
+</INHIBIT>
+<RECALCULATE>
+The used digits are 2, 3, and 6; the only unused digit in [2, 3, 6, 4] is 4.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Tau maps to 4.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Access ticket A446614 occurs during the night shift. Access policy says a badge holder may enter the prototype bay. A later exception says that during a chemical spill flag, even badge holders must block entry until cleared. Ada has a valid badge, but the prototype bay is under a chemical spill flag. Should Ada enter?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The obvious answer is yes, because Ada has a valid badge under the general access rule.
+</PROPOSE>
+<TEST>
+The prototype bay is also under a chemical spill flag, and that later exception applies to badge holders.
+</TEST>
+<CONTRADICT>
+Allowing entry violates the exception requiring staff to block entry until cleared.
+</CONTRADICT>
+<INHIBIT>
+Therefore, allowing entry is strictly false and discarded. Eliminate the badge-only decision path and suppress it while the exception is active.
+</INHIBIT>
+<RECALCULATE>
+The active exception controls the outcome, so staff must block entry until cleared.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+No. Staff must block entry until cleared.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A graph search starts at S820. From S820, it can go to B343 or G145. B343 leads only to forbidden terminal X380. G145 leads to goal T562. Which branch should the search keep?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The first branch is S820 -> B343, because it is listed first and looks immediately reachable.
+</PROPOSE>
+<TEST>
+Following B343 gives only B343 -> X380, and X380 is forbidden.
+</TEST>
+<CONTRADICT>
+The branch through B343 cannot reach T562; it terminates at forbidden node X380.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the B343 branch is strictly false and discarded. Eliminate it and suppress the listed-first search bias.
+</INHIBIT>
+<RECALCULATE>
+Backtrack to S820 and keep S820 -> G145 -> T562, the branch that reaches the goal.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Keep the S820 -> G145 branch.
+</FINAL_ANSWER>
+
+<PROBLEM>
+What does this Python snippet print?
+
+```python
+total_46616 = 34 + 5 * 9
+print(total_46616)
+```
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting trace is to read left to right, compute (34 + 5) * 9, and predict 351.
+</PROPOSE>
+<TEST>
+Python multiplication has higher precedence than addition, so 5 * 9 must be evaluated before adding 34.
+</TEST>
+<CONTRADICT>
+The left-to-right trace violates Python operator precedence; (34 + 5) * 9 is not the expression the interpreter evaluates.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the printed value 351 is strictly false and discarded. Eliminate the left-to-right parse and suppress that branch.
+</INHIBIT>
+<RECALCULATE>
+The actual expression is 34 + (5 * 9) = 34 + 45 = 79.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+It prints 79.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Dispatch manifest M346617 lists three delivery routes: central ward, south depot, and west pharmacy. They must each use a different van from ['Van A', 'Van D', 'Van C']. central ward uses Van A. west pharmacy uses Van C. south depot cannot use Van C. Which van must serve south depot?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The obvious but wrong move is to assign south depot to Van A, since the explicit ban only mentions Van C.
+</PROPOSE>
+<TEST>
+Van A is already committed to central ward. A van cannot be assigned to two simultaneous routes.
+</TEST>
+<CONTRADICT>
+The assignment duplicates Van A, violating the strict one-route-per-van constraint.
+</CONTRADICT>
+<INHIBIT>
+Therefore, south depot using Van A is strictly false and invalid. Discard and eliminate that van from the route's options.
+</INHIBIT>
+<RECALCULATE>
+With Van A and Van C unavailable, the only remaining van for south depot is Van D.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+south depot must use Van D.
+</FINAL_ANSWER>
+
+<PROBLEM>
+In round G646618 of a card game, red cards normally score 3 times their printed value. A later rule says a red card with a Lock token ignores all multipliers. A red card has printed value 22 and a Lock token. What score does it produce?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The first answer is 66, because a red card normally gets the 3x multiplier.
+</PROPOSE>
+<TEST>
+The card has a Lock token, and the later rule says such a card ignores all multipliers.
+</TEST>
+<CONTRADICT>
+Scoring 66 violates the no-multiplier exception created by the Lock token.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the multiplied score 66 is strictly false and invalid. Discard it and suppress the red-card multiplier association.
+</INHIBIT>
+<RECALCULATE>
+With the multiplier eliminated, the score is just the printed value: 22.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The card scores 22.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A 3 by 3 Latin square uses symbols ['navy', 'gold', 'coral']; each row and column must contain each symbol exactly once. In the top row, left is navy and center is gold. In the right column, the middle cell is navy and the bottom cell is gold. What symbol goes in the top-right cell?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting branch is to put navy in the top-right cell because navy appears in nearby clues.
+</PROPOSE>
+<TEST>
+The top row already has navy in the left cell, and the right column also already has navy in the middle cell.
+</TEST>
+<CONTRADICT>
+Placing navy in the top-right cell violates both row exclusivity and column exclusivity.
+</CONTRADICT>
+<INHIBIT>
+Therefore, navy in that cell is strictly false and invalid. Discard it and eliminate the repeated-symbol branch.
+</INHIBIT>
+<RECALCULATE>
+The top row already contains navy and gold, so it is missing coral. The right column also contains navy and gold, so it is missing coral. The only legal symbol is coral.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The top-right cell must be coral.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A hardcover book and a bookmark together cost $39.50. The hardcover book costs $29.60 more than the bookmark. What is the price of the bookmark?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting answer is that the bookmark costs $29.60, because $29.60 is the loud number in the comparison.
+</PROPOSE>
+<TEST>
+If the bookmark cost $29.60, then the hardcover book would cost $59.20. Their total would be $88.80, not $39.50.
+</TEST>
+<CONTRADICT>
+The proposed bookmark price violates the total-cost equation: cheap + (cheap + difference) must equal $39.50.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the assumption that the bookmark costs $29.60 is strictly false and discarded. Eliminate that autocomplete answer and suppress its association with the difference amount.
+</INHIBIT>
+<RECALCULATE>
+Let c be the bookmark price in cents. Then c + (c + 2960) = 3950, so 2c = 990 and c = 495 cents.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The bookmark costs $4.95.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Four researchers, Kira, Cara, Iris, and Ada, each occupy exactly one different room from [101, 204, 203, 102]. Kira is in room 203. Iris is in room 204. Cara is not in room 102. Which room is Cara in?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+A tempting shortcut is to place Cara in room 203, because that room is not the forbidden room 102.
+</PROPOSE>
+<TEST>
+Room 203 is already occupied by Kira. The puzzle states that each researcher occupies a different room.
+</TEST>
+<CONTRADICT>
+The proposed assignment puts both Kira and Cara in room 203, violating strict mutual exclusivity.
+</CONTRADICT>
+<INHIBIT>
+Therefore, Cara in room 203 is strictly false and invalid. Discard that assignment and eliminate room 203 from Cara's possibilities.
+</INHIBIT>
+<RECALCULATE>
+The occupied rooms are 203 for Kira and 204 for Iris. Cara also cannot use 102, so the only remaining room is 101.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Cara is in room 101.
+</FINAL_ANSWER>
+
+<PROBLEM>
+In verification deck 146622, a 49 lb order to Spokane is being routed. A logistics rule says same-day orders normally ship by air. A later exception says any temperature probe must ship by regulated ground, even when the order is same-day. Order Q47622 is a same-day order containing a temperature probe. How should it ship?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The first hypothesis is air shipment, because the general same-day-order rule points directly to air.
+</PROPOSE>
+<TEST>
+The order also contains a temperature probe. The later exception explicitly covers that item and overrides the normal air rule.
+</TEST>
+<CONTRADICT>
+Air shipment violates the item-specific exception requiring regulated ground for any temperature probe.
+</CONTRADICT>
+<INHIBIT>
+Therefore, air shipment is strictly false and invalid for this order. Discard the general-rule answer and suppress it for this exception case.
+</INHIBIT>
+<RECALCULATE>
+Apply the narrower exception after recognizing the general rule: temperature probe shipments use regulated ground.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Ship Order Q47622 by regulated ground.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A grid robot starts at (25, 44) and must reach (29, 49). It may move north or east one square at a time. Square (26, 44) is blocked. Which first move should it choose?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The locally attractive branch is to move east first, from (25, 44) to (26, 44), because the goal is east of the start.
+</PROPOSE>
+<TEST>
+The first east move lands exactly on (26, 44), which the problem marks as blocked.
+</TEST>
+<CONTRADICT>
+The east-first branch collides with a blocked square before it can make progress.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the east-first branch is strictly false and discarded. Eliminate that branch and suppress the direct-east impulse.
+</INHIBIT>
+<RECALCULATE>
+Backtrack to (25, 44). The north move reaches (25, 45), avoids the blocked square, and still allows later east moves toward (29, 49).
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The robot should move north first.
+</FINAL_ANSWER>
+
+<PROBLEM>
+An index starts at 3120. It rises by 40% and then falls by 10% from the new level. What is the net percentage change from the original index?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting shortcut is to subtract the percentages and claim the net change is 30%.
+</PROPOSE>
+<TEST>
+After the rise, the index is 3120 * 140/100. The fall then multiplies that new value by 90/100, so the combined multiplier is 63/50.
+</TEST>
+<CONTRADICT>
+The subtraction shortcut treats both percentages as if they used the same base, but the 10% fall is applied after the 40% rise.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the 30% subtraction answer is strictly false and invalid. Discard it and eliminate the same-base assumption.
+</INHIBIT>
+<RECALCULATE>
+The true net percent is (63/50 - 1) * 100 = 26%.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The net change is 26%.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Jobs Packing, Welding, and Etching must run on three different machines from ['M1', 'M5', 'M4']. Packing runs on M1. Etching runs on M4. Welding cannot run on M4. Which machine runs Welding?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting assignment is Welding on M1, since the only stated ban names M4.
+</PROPOSE>
+<TEST>
+But M1 is already assigned to Packing, and every listed job must use a different machine.
+</TEST>
+<CONTRADICT>
+Assigning Welding to M1 violates the one-job-per-machine constraint.
+</CONTRADICT>
+<INHIBIT>
+Therefore, Welding on M1 is strictly false and discarded. Eliminate M1 from Welding's candidate set.
+</INHIBIT>
+<RECALCULATE>
+With M1 used by Packing and M4 used by Etching, the only remaining machine for Welding is M5.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Welding runs on M5.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Return ticket R746626 concerns a $975 web purchase. Store policy says purchases returned within 30 days are refundable. A later exception says personalized toolkit purchases are nonrefundable once opened. A customer returns an opened personalized toolkit after 28 days. Is the purchase refundable?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The initial answer is refundable, because 28 days is inside the 30-day general window.
+</PROPOSE>
+<TEST>
+The returned product is an opened personalized toolkit, and the exception says opened personalized toolkit purchases are nonrefundable.
+</TEST>
+<CONTRADICT>
+The refundable answer violates the narrower opened-item exception even though the 30-day rule would otherwise apply.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the refundable conclusion is strictly false and discarded. Eliminate the general 30-day path for this opened exception item.
+</INHIBIT>
+<RECALCULATE>
+Use the specific exception: opened personalized toolkit purchases are nonrefundable regardless of being within 28 days.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The purchase is not refundable.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Choose distinct values x, y, z from [51, 55, 71, 77] such that x < y < z and x + y + z = 203. Which value should x take?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The search branch that looks natural is x = 51, because it is the smallest available value.
+</PROPOSE>
+<TEST>
+If x = 51, then y + z must equal 152. The two largest remaining values sum to 148, so the required pair is unavailable.
+</TEST>
+<CONTRADICT>
+The branch x = 51 cannot complete the target sum while keeping x, y, and z distinct and ordered.
+</CONTRADICT>
+<INHIBIT>
+Therefore, x = 51 is strictly false and discarded. Eliminate that search branch and suppress the smallest-value heuristic.
+</INHIBIT>
+<RECALCULATE>
+Backtrack and try x = 55. Then y = 71 and z = 77, and 55 + 71 + 77 = 203.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+x should be 55.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A courier drives 27 miles from the depot to a lab at 31 mph, then drives the same 27 miles back at 34 mph. What is the average speed for the whole round trip?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The intuitive answer is the arithmetic mean: (31 + 34) / 2 = 32.50 mph.
+</PROPOSE>
+<TEST>
+The round trip covers 54 miles. The travel time is 27/31 + 27/34 hours, not two equal time blocks.
+</TEST>
+<CONTRADICT>
+The arithmetic mean assumes equal time at each speed, but the problem gives equal distances, so 32.50 mph uses the wrong weighting.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the arithmetic-mean answer is strictly false and discarded. Suppress the equal-time association and eliminate that path.
+</INHIBIT>
+<RECALCULATE>
+Average speed is total distance divided by total time: 54 / (27/31 + 27/34) = 32.43 mph.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The average speed is 32.43 mph.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Kira, Dion, Lena, and Cara each present in a different time slot from ['10:00', '1:00', '2:00', '9:00']. Kira presents at 10:00. Lena presents at 2:00. Dion cannot present at 9:00. Which slot does Dion use?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The surface-level answer is 10:00 for Dion, because it is not the explicitly forbidden slot.
+</PROPOSE>
+<TEST>
+However, 10:00 is already assigned to Kira, and the schedule forbids shared slots.
+</TEST>
+<CONTRADICT>
+The proposed schedule gives 10:00 to two presenters, violating strict mutual exclusivity.
+</CONTRADICT>
+<INHIBIT>
+Therefore, Dion at 10:00 is strictly false and invalid. Discard that duplicate-slot assignment.
+</INHIBIT>
+<RECALCULATE>
+The used slots are 10:00 and 2:00, and Dion cannot use 9:00. The remaining valid slot is 1:00.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Dion presents at 1:00.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Factory protocol says equipment above 80.4 F may release the robot arm after a standard cooldown check. A later exception says if the equipment has an overpressure warning, staff must escalate to the floor lead. Unit U46630 is at 81.0 F and has an overpressure warning. What should staff do?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The first answer is to release the robot arm, because the temperature clears the general cooldown rule.
+</PROPOSE>
+<TEST>
+The unit also has an overpressure warning. The exception is more specific than the cooldown rule and changes the allowed action.
+</TEST>
+<CONTRADICT>
+Choosing to release the robot arm violates the exception requiring staff to escalate to the floor lead.
+</CONTRADICT>
+<INHIBIT>
+Therefore, choosing to release the robot arm is strictly false and invalid for this unit. Discard that general-rule action and suppress it.
+</INHIBIT>
+<RECALCULATE>
+After applying the exception, staff must escalate to the floor lead.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Staff should escalate to the floor lead.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Dependency resolver: App Ion requires Core 1.20 because it has not migrated to Core 2.x. The latest TracePack requires Core 2.7, while TracePack legacy supports Core 1.20. Which TracePack variant should be selected?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The attractive branch is to select the latest TracePack, because dependency resolvers usually prefer newest compatible-looking packages.
+</PROPOSE>
+<TEST>
+Latest TracePack requires Core 2.7, but App Ion requires Core 1.20.
+</TEST>
+<CONTRADICT>
+The latest-branch creates incompatible Core requirements: Core 1.20 and Core 2.7 cannot both be installed as the same singleton dependency.
+</CONTRADICT>
+<INHIBIT>
+Therefore, latest TracePack is strictly false and invalid for this resolution. Discard it and eliminate the Core 2.x branch.
+</INHIBIT>
+<RECALCULATE>
+Backtrack to the plugin choice and select TracePack legacy, which supports Core 1.20 and satisfies App Ion.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Select TracePack legacy.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Inspection batch D546632 compares two suppliers. Supplier A ships 10600 parts with a 4% defect rate. Supplier B ships 2800 parts with a 15% defect rate. A randomly selected defective part is inspected. What is the probability it came from Supplier A?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting answer is to choose Supplier B, because B has the louder defect rate: 15% is larger than 4%.
+</PROPOSE>
+<TEST>
+Supplier A contributes 10600 * 4% = 424 defective parts. Supplier B contributes 2800 * 15% = 420 defective parts.
+</TEST>
+<CONTRADICT>
+The higher defect-rate shortcut ignores base rates; it predicts B even though A contributes 424 defective parts versus B's 420.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the Supplier B shortcut is strictly false and invalidates the answer path. Discard it and suppress the rate-only association.
+</INHIBIT>
+<RECALCULATE>
+Conditioning on defectiveness gives P(A | defective) = 424/(424 + 420) = 0.5024.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The probability is 0.5024, or 50.24%.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Codes Beta, Sigma, Alpha, and Delta each map to one different digit from [4, 2, 1, 3]. Beta maps to 4. Sigma maps to 2. Alpha maps to 1. Which digit maps to Delta?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting guess is 2, because it appears as a salient assigned digit near Delta in the code list.
+</PROPOSE>
+<TEST>
+Digit 2 is already mapped to Sigma. The mapping is one-to-one, so no second symbol can reuse it.
+</TEST>
+<CONTRADICT>
+Mapping Delta to 2 violates the one-symbol-per-digit constraint.
+</CONTRADICT>
+<INHIBIT>
+Therefore, Delta -> 2 is strictly false and discarded. Eliminate digit 2 and suppress that duplicate mapping.
+</INHIBIT>
+<RECALCULATE>
+The used digits are 4, 2, and 1; the only unused digit in [4, 2, 1, 3] is 3.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Delta maps to 3.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Access ticket A446634 occurs during the swing shift. Access policy says a badge holder may enter the prototype bay. A later exception says that during a security freeze, even badge holders must deny entry and notify facilities. Kira has a valid badge, but the prototype bay is under a security freeze. Should Kira enter?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The obvious answer is yes, because Kira has a valid badge under the general access rule.
+</PROPOSE>
+<TEST>
+The prototype bay is also under a security freeze, and that later exception applies to badge holders.
+</TEST>
+<CONTRADICT>
+Allowing entry violates the exception requiring staff to deny entry and notify facilities.
+</CONTRADICT>
+<INHIBIT>
+Therefore, allowing entry is strictly false and discarded. Eliminate the badge-only decision path and suppress it while the exception is active.
+</INHIBIT>
+<RECALCULATE>
+The active exception controls the outcome, so staff must deny entry and notify facilities.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+No. Staff must deny entry and notify facilities.
+</FINAL_ANSWER>
+
+<PROBLEM>
+A graph search starts at S954. From S954, it can go to B180 or G568. B180 leads only to forbidden terminal X451. G568 leads to goal T743. Which branch should the search keep?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The first branch is S954 -> B180, because it is listed first and looks immediately reachable.
+</PROPOSE>
+<TEST>
+Following B180 gives only B180 -> X451, and X451 is forbidden.
+</TEST>
+<CONTRADICT>
+The branch through B180 cannot reach T743; it terminates at forbidden node X451.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the B180 branch is strictly false and discarded. Eliminate it and suppress the listed-first search bias.
+</INHIBIT>
+<RECALCULATE>
+Backtrack to S954 and keep S954 -> G568 -> T743, the branch that reaches the goal.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+Keep the S954 -> G568 branch.
+</FINAL_ANSWER>
+
+<PROBLEM>
+What does this Python snippet print?
+
+```python
+output_46636 = 35 + 8 * 4
+print(output_46636)
+```
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The tempting trace is to read left to right, compute (35 + 8) * 4, and predict 172.
+</PROPOSE>
+<TEST>
+Python multiplication has higher precedence than addition, so 8 * 4 must be evaluated before adding 35.
+</TEST>
+<CONTRADICT>
+The left-to-right trace violates Python operator precedence; (35 + 8) * 4 is not the expression the interpreter evaluates.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the printed value 172 is strictly false and discarded. Eliminate the left-to-right parse and suppress that branch.
+</INHIBIT>
+<RECALCULATE>
+The actual expression is 35 + (8 * 4) = 35 + 32 = 67.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+It prints 67.
+</FINAL_ANSWER>
+
+<PROBLEM>
+Dispatch manifest M346637 lists three delivery routes: west pharmacy, south depot, and east lab. They must each use a different van from ['Van C', 'Van A', 'Van B']. west pharmacy uses Van C. east lab uses Van B. south depot cannot use Van B. Which van must serve south depot?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The obvious but wrong move is to assign south depot to Van C, since the explicit ban only mentions Van B.
+</PROPOSE>
+<TEST>
+Van C is already committed to west pharmacy. A van cannot be assigned to two simultaneous routes.
+</TEST>
+<CONTRADICT>
+The assignment duplicates Van C, violating the strict one-route-per-van constraint.
+</CONTRADICT>
+<INHIBIT>
+Therefore, south depot using Van C is strictly false and invalid. Discard and eliminate that van from the route's options.
+</INHIBIT>
+<RECALCULATE>
+With Van C and Van B unavailable, the only remaining van for south depot is Van A.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+south depot must use Van A.
+</FINAL_ANSWER>
+
+<PROBLEM>
+In round G646638 of a card game, red cards normally score 4 times their printed value. A later rule says a red card with a Ash token ignores all multipliers. A red card has printed value 9 and a Ash token. What score does it produce?
+</PROBLEM>
+
+<REASONING>
+<PROPOSE>
+The first answer is 36, because a red card normally gets the 4x multiplier.
+</PROPOSE>
+<TEST>
+The card has a Ash token, and the later rule says such a card ignores all multipliers.
+</TEST>
+<CONTRADICT>
+Scoring 36 violates the no-multiplier exception created by the Ash token.
+</CONTRADICT>
+<INHIBIT>
+Therefore, the multiplied score 36 is strictly false and invalid. Discard it and suppress the red-card multiplier association.
+</INHIBIT>
+<RECALCULATE>
+With the multiplier eliminated, the score is just the printed value: 9.
+</RECALCULATE>
+</REASONING>
+
+<FINAL_ANSWER>
+The card scores 9.
+</FINAL_ANSWER>
