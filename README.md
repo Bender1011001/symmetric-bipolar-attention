@@ -101,7 +101,8 @@ python run_scratch_tokenized_compare.py \
 To verify that our stateful channel-doubled KV-cache implementation is mathematically identical to a full-sequence forward pass during generation:
 
 ```bash
-python scratch/test_diff_sba_cache.py
+# scratch/ scripts import root modules, so put the repo root on PYTHONPATH
+PYTHONPATH=. python scratch/test_diff_sba_cache.py
 ```
 *Expected Output*: Displays passing checks for both Softmax and SBA SDPA, indicating maximum discrepancy bounded under FP32 machine precision ($\approx 1.19 \times 10^{-7}$).
 
@@ -121,8 +122,8 @@ To aggregate and format the results across multiple seeds (if running sweeps):
 
 ```bash
 # Summarize validation loss, peak VRAM, and step latencies
-python scratch/collate_results.py
+PYTHONPATH=. python scratch/collate_results.py
 
 # Summarize task accuracies
-python scratch/collate_evals.py
+PYTHONPATH=. python scratch/collate_evals.py
 ```
