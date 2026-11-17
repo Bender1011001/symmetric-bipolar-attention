@@ -10,10 +10,11 @@ This repository isolates **Symmetric Bipolar Attention (SBA)** and **Differentia
 
 This repo contains two distinct lines of work — keep them separate:
 
-1. **From-scratch Softmax-vs-SBA comparison (the headline, positive result).**
+1. **From-scratch Softmax-vs-SBA comparison (experimental).**
    Train matched small Transformers from scratch with softmax vs SBA attention
-   under identical seeds/hyperparameters and compare. This is the credible,
-   reproducible core and the rest of this README documents it.
+   under identical seeds/hyperparameters and compare. The repository provides
+   the comparison code; it does not ship the raw run artifacts needed to audit
+   a positive performance claim. The rest of this README describes how to run it.
    Entry points: `run_scratch_tokenized_compare.py`, `run_scratch_compare.py`.
 
 2. **Pretrained softmax → SBA conversion (a negative result).**

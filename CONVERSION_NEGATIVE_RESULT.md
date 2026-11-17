@@ -6,9 +6,11 @@ bridge) and the evidence that the approach, as attempted, fails to preserve
 model quality. It is kept as an honest negative result so the approach is not
 re-attempted blindly.
 
-The clean, positive contribution of this repo is the **from-scratch
-Softmax-vs-SBA comparison** (see [`README.md`](README.md)); that work is
-unaffected by the findings here.
+The separate **from-scratch Softmax-vs-SBA comparison** (see
+[`README.md`](README.md)) is an experimental code path. These conversion
+results neither establish nor refute its performance. The local measurement
+artifacts cited below are not included in this checkout; the numbers are
+reported results, not independently verified by the published artifacts.
 
 ---
 
